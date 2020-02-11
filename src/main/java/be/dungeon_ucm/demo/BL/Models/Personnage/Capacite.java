@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.BL.Models.ListeClass;
+package be.dungeon_ucm.demo.BL.Models.Personnage;
 
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
@@ -10,12 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Getter
-@Setter
+
 public class Capacite {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nomCapacite;
     private int Degats;

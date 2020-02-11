@@ -20,4 +20,28 @@ public class ObjectBoost extends Consommable {
         this.boost = boost;
         this.stat = stat;
     }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public int getBoost() {
+        return boost;
+    }
+
+    public void setBoost(int boost) {
+        this.boost = boost;
+    }
+
+    public String getStat() {
+        return stat;
+    }
+
+    public void setStat(String stat) {
+        this.stat = stat;
+    }
 }

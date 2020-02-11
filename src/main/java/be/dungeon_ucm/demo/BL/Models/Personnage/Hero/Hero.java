@@ -6,11 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-
-@Getter
-@Setter
 public class Hero extends Personnage {
-
 
     private long id;
     private int pointDeChance;
@@ -33,5 +29,53 @@ public class Hero extends Personnage {
         this.pointDExperienceMax = (getNiveau()*100);
     }
 
+    @Override
+    public long getId() {
+        return id;
+    }
 
+    @Override
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getPointDeChance() {
+        return pointDeChance;
+    }
+
+    public void setPointDeChance(int pointDeChance) {
+        this.pointDeChance = pointDeChance;
+    }
+
+    public int getPointDEndurance() {
+        return pointDEndurance;
+    }
+
+    public void setPointDEndurance(int pointDEndurance) {
+        this.pointDEndurance = pointDEndurance;
+    }
+
+    public int getPointDEnduranceMax() {
+        return pointDEnduranceMax;
+    }
+
+    public void setPointDEnduranceMax(int pointDEnduranceMax) {
+        this.pointDEnduranceMax = pointDEnduranceMax;
+    }
+
+    public int getPointDExperience() {
+        return pointDExperience;
+    }
+
+    public void setPointDExperience(int pointDExperience) {
+        this.pointDExperience = pointDExperience;
+    }
+
+    public int getPointDExperienceMax() {
+        return pointDExperienceMax;
+    }
+
+    public void setPointDExperienceMax(int pointDExperienceMax) {
+        this.pointDExperienceMax = pointDExperienceMax;
+    }
 }
