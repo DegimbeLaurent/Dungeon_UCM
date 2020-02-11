@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.BL.Models.ListeClass;
+package be.dungeon_ucm.demo.BL.Models.Personnage;
 
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
