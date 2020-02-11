@@ -7,16 +7,12 @@ import lombok.Setter;
 import javax.persistence.*;
 
 
-@Entity
 @Getter
 @Setter
 public abstract class ItemBasique {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
 
-    @Column(name =" durabilité ")
     private int durablilite;
 
     private Ingrediant ingrediant; // Liste des ingredient pour le recuperer

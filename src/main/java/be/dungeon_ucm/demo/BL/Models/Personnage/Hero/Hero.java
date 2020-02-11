@@ -6,29 +6,18 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
-@Entity
+
 @Getter
 @Setter
 public class Hero extends Personnage {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private long id;
-    // @Column(name = " Chance ")
     private int pointDeChance;
-
-    // @Column(name = " Endurance ")
     private int pointDEndurance;
-
-    // @Column(name = " Endurance Max ")
     private int pointDEnduranceMax;
-
-    // @Column(name = " Experience ")
     private int pointDExperience;
-
-    // @Column(name =" Experience Demandée ")
     private int pointDExperienceMax;
-
     public Hero() {
     }
 

@@ -9,7 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+
 @Getter
 @Setter
 public class Monstre extends Personnage {
@@ -17,22 +17,16 @@ public class Monstre extends Personnage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    // @Column(name = " Monstre Volant ")
     private boolean volant;
 
-    // @Column(name = " Monstre Magique ")
     private boolean magic;
 
-    // @Column(name = " Niveau du donjon ")
     private int niveauMonstre;
 
-    // @Column(name = "Experiance Donnée ")
     private int expDonnee;
 
-    // @Column(name= " Race " )
     private Race race;
 
-    // @Column( name = " Nature Donjon ")
     private NatureElement typeDeMonstre;
 
     public Monstre() {
