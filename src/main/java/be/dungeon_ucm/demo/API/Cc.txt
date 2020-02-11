@@ -1,0 +1,4 @@
+api envoie et recois les elements de la vue
+    DTO models de la vue
+    Controllers: liens pour la vue ex: " @GetMapping("/new") "
+    Mapper: envoie un models qui ne provoquera pas de probleme => objet: set<objet2>

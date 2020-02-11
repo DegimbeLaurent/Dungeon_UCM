@@ -1,0 +1,4 @@
+Bl couche où les actions du jeu seront fais et modifier
+    Models: models de la Bl
+    service: => combat,lvlup,donjon
+    Mapper: envoie un models qui ne provoquera pas de probleme => objet: set<objet2>
