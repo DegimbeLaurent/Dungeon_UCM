@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Items.Consommable.Recup;
+package be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup;
 
-import be.dungeon_ucm.demo.DAL.Models.Items.Consommable.Consommable;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Consommable;
 import lombok.Getter;
 import lombok.Setter;
 

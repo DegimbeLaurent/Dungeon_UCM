@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Personnage.Hero;
+package be.dungeon_ucm.demo.BL.Models.Personnage.Hero;
 
-import be.dungeon_ucm.demo.DAL.Models.Personnage.Personnage;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import lombok.Getter;
 import lombok.Setter;
 

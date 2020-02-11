@@ -1,8 +1,8 @@
-package be.dungeon_ucm.demo.DAL.Models.ListeClass;
+package be.dungeon_ucm.demo.BL.Models.ListeClass;
 
 
-import be.dungeon_ucm.demo.DAL.Models.EtatNature.Etat;
-import be.dungeon_ucm.demo.DAL.Models.EtatNature.NatureElement;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;

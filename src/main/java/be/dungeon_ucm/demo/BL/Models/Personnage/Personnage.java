@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Personnage;
+package be.dungeon_ucm.demo.BL.Models.Personnage;
 
-import be.dungeon_ucm.demo.DAL.Models.EtatNature.Etat;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import lombok.Getter;
 import lombok.Setter;
 

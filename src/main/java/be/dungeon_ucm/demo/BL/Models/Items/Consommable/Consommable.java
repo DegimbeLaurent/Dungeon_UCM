@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Items.Consommable;
+package be.dungeon_ucm.demo.BL.Models.Items.Consommable;
 
-import be.dungeon_ucm.demo.DAL.Models.Items.ItemBasique;
+import be.dungeon_ucm.demo.BL.Models.Items.ItemBasique;
 
 public class Consommable extends ItemBasique {
 

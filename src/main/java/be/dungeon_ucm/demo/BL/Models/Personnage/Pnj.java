@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.DAL.Models.Personnage;
+package be.dungeon_ucm.demo.BL.Models.Personnage;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

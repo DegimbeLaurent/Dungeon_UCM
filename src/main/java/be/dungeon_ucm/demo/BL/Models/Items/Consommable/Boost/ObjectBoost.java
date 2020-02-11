@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Items.Consommable.Boost;
+package be.dungeon_ucm.demo.BL.Models.Items.Consommable.Boost;
 
-import be.dungeon_ucm.demo.DAL.Models.Items.Consommable.Consommable;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Consommable;
 
 public class ObjectBoost extends Consommable {
 

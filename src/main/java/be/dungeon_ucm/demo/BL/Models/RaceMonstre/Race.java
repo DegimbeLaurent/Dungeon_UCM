@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.DAL.Models.RaceMonstre;
+package be.dungeon_ucm.demo.BL.Models.RaceMonstre;
 
 public enum Race {
 

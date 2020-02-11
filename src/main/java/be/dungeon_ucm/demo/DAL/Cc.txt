@@ -1,4 +1,0 @@
-DAL envoie et recois les elements de la DB
-    Models: models de la DB ex: Model
-    DAO: repository ex:  ModelDAO extends JpaRepository<Model, Integer>
-    Mapper: envoie un models qui ne provoquera pas de probleme => objet: set<objet2>

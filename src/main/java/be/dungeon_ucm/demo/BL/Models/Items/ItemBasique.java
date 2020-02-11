@@ -1,6 +1,6 @@
-package be.dungeon_ucm.demo.DAL.Models.Items;
+package be.dungeon_ucm.demo.BL.Models.Items;
 
-import be.dungeon_ucm.demo.DAL.Models.Items.Loot.Ingrediant;
+import be.dungeon_ucm.demo.BL.Models.Items.Loot.Ingrediant;
 import lombok.Getter;
 import lombok.Setter;
 

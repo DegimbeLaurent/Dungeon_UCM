@@ -1,7 +1,7 @@
-package be.dungeon_ucm.demo.DAL.Models.Items.Equipement;
+package be.dungeon_ucm.demo.BL.Models.Items.Equipement;
 
-import be.dungeon_ucm.demo.DAL.Models.Items.ItemBasique;
-import be.dungeon_ucm.demo.DAL.Models.EtatNature.NatureElement;
+import be.dungeon_ucm.demo.BL.Models.Items.ItemBasique;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import lombok.Getter;
 import lombok.Setter;
 

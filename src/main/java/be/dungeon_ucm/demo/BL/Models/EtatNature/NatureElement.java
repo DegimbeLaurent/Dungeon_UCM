@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.DAL.Models.EtatNature;
+package be.dungeon_ucm.demo.BL.Models.EtatNature;
 
 public enum NatureElement {
 

@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.DAL.Models.Items.Loot;
+package be.dungeon_ucm.demo.BL.Models.Items.Loot;
 
 public enum Ingrediant {
 
