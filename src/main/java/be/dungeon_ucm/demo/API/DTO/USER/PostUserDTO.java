@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.API.DTO;
+package be.dungeon_ucm.demo.API.DTO.USER;
 
 import be.dungeon_ucm.demo.DAL.Models.User;
 import org.hibernate.validator.constraints.UniqueElements;

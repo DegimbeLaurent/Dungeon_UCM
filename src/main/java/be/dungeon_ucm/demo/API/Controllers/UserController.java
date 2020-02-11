@@ -1,8 +1,8 @@
 package be.dungeon_ucm.demo.API.Controllers;
 
-import be.dungeon_ucm.demo.API.DTO.LogUserDTO;
-import be.dungeon_ucm.demo.API.DTO.PostUserDTO;
-import be.dungeon_ucm.demo.API.DTO.UserDTO;
+import be.dungeon_ucm.demo.API.DTO.USER.LogUserDTO;
+import be.dungeon_ucm.demo.API.DTO.USER.PostUserDTO;
+import be.dungeon_ucm.demo.API.DTO.USER.UserDTO;
 import be.dungeon_ucm.demo.DAL.DAO.UserDAO;
 import be.dungeon_ucm.demo.DAL.Models.User;
 import org.springframework.beans.factory.annotation.Autowired;
