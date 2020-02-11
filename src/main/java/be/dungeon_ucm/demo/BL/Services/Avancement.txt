@@ -1,0 +1,6 @@
+Service Personnage :
+1.Recuperation des PV et MANA .
+2.Retirer Armure
+3.Mettre Armure
+4.Mettre Arme
+5.retirer Arme

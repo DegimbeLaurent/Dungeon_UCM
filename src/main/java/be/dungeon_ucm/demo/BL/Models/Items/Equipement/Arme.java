@@ -8,8 +8,6 @@ import lombok.Setter;
 import javax.persistence.Entity;
 
 
-@Getter
-@Setter
 public class Arme extends ItemBasique {
 
     private int degatsMin;
@@ -31,5 +29,53 @@ public class Arme extends ItemBasique {
     }
 
     public Arme() {
+    }
+
+    public int getDegatsMin() {
+        return degatsMin;
+    }
+
+    public void setDegatsMin(int degatsMin) {
+        this.degatsMin = degatsMin;
+    }
+
+    public int getDegatsMax() {
+        return degatsMax;
+    }
+
+    public void setDegatsMax(int degatsMax) {
+        this.degatsMax = degatsMax;
+    }
+
+    public int getNiveauUtilisationMin() {
+        return niveauUtilisationMin;
+    }
+
+    public void setNiveauUtilisationMin(int niveauUtilisationMin) {
+        this.niveauUtilisationMin = niveauUtilisationMin;
+    }
+
+    public boolean isMagicOuPas() {
+        return magicOuPas;
+    }
+
+    public void setMagicOuPas(boolean magicOuPas) {
+        this.magicOuPas = magicOuPas;
+    }
+
+    public int getTailleArme() {
+        return tailleArme;
+    }
+
+    public void setTailleArme(int tailleArme) {
+        this.tailleArme = tailleArme;
+    }
+
+    public NatureElement getNature() {
+        return nature;
+    }
+
+    public void setNature(NatureElement nature) {
+        this.nature = nature;
     }
 }

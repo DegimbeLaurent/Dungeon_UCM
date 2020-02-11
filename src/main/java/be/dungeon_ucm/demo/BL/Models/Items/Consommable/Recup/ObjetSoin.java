@@ -6,9 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.Entity;
 
-
-@Getter
-@Setter
 public class ObjetSoin  extends Consommable {
 
     private int pointDeSoin;
@@ -20,5 +17,13 @@ public class ObjetSoin  extends Consommable {
     public ObjetSoin(String nom, int soin) {
         super(nom);
         this.pointDeSoin = soin;
+    }
+
+    public int getPointDeSoin() {
+        return pointDeSoin;
+    }
+
+    public void setPointDeSoin(int pointDeSoin) {
+        this.pointDeSoin = pointDeSoin;
     }
 }

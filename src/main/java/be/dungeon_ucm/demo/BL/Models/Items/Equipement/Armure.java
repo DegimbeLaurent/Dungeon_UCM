@@ -5,9 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 import javax.persistence.Entity;
 
-
-@Getter
-@Setter
 public class Armure extends ItemBasique {
 
     private int protection;
@@ -26,5 +23,37 @@ public class Armure extends ItemBasique {
     }
 
     public Armure() {
+    }
+
+    public int getProtection() {
+        return protection;
+    }
+
+    public void setProtection(int protection) {
+        this.protection = protection;
+    }
+
+    public int getNiveauUtilisationMin() {
+        return niveauUtilisationMin;
+    }
+
+    public void setNiveauUtilisationMin(int niveauUtilisationMin) {
+        this.niveauUtilisationMin = niveauUtilisationMin;
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
+    }
+
+    public boolean isMagicArmure() {
+        return magicArmure;
+    }
+
+    public void setMagicArmure(boolean magicArmure) {
+        this.magicArmure = magicArmure;
     }
 }
