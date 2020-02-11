@@ -22,14 +22,14 @@ public class Personnage {
     private int pointDeResistanceMagique;
     private int pointDeVieMax;
     private int pointDeManaMax;
-    private Etat etat = Etat.NORMAL;
+    private Etat etat;
     private Boolean vie;
     private int niveau;
     // Corps reste pour l'instant un projet
     private Corps corpsAventurier;
     private Armure corps;
     private Arme arme;
-    private List<Capacite> capacites;
+    private List<Integer> capacites;
 
     public Personnage() {
     }
@@ -49,7 +49,8 @@ public class Personnage {
         this.pointDeVieMax = pointDeVie;
         this.pointDeManaMax = pointDeMana;
         this.corpsAventurier = null;
-        this.capacites = new ArrayList<Capacite>(4);
+        this.capacites = new ArrayList<Integer>(4);
+        this.etat = Etat.NORMAL;
     }
 
     public long getId() {
@@ -193,11 +194,11 @@ public class Personnage {
         this.arme = arme;
     }
 
-    public List<Capacite> getCapacites() {
+    public List<Integer> getCapacites() {
         return capacites;
     }
 
-    public void setCapacites(List<Capacite> capacites) {
+    public void setCapacites(List<Integer> capacites) {
         this.capacites = capacites;
     }
 

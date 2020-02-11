@@ -3,10 +3,13 @@ package be.dungeon_ucm.demo.BL.Services.ServiceImpl;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.BL.Services.InterfaceService.PersonnageService;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
 import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
+
+import java.util.List;
 
 public class PersonnageServiceImpl implements PersonnageService {
 
@@ -62,7 +65,6 @@ public class PersonnageServiceImpl implements PersonnageService {
     } // ok
 
 
-
     @Override
     public void subirDegatPhys(Personnage p,int degats){
         p.setPointDeVie(p.getPointDeVie() - (degats - p.getPointDeResistancePhysique()));
@@ -87,8 +89,22 @@ public class PersonnageServiceImpl implements PersonnageService {
     }
 
     @Override
-    public void etatCritique(Etat p) {
+    public void etatCritique(Personnage p) {
+        p.setPointDeVie(p.getPointDeVie() - p.getEtat().getInfluenceEtat());
+    }
 
+    @Override
+    public void modifierCapacite(Personnage p, int c) {
+        for (int a : p.getCapacites()) {
+            if(a == c){
+                p.getCapacites().remove(a);
+            }
+        }
+    }
+
+    @Override
+    public List<Integer> recuperCapacite(Personnage p) {
+        return p.getCapacites();
     }
 
     @Override

@@ -9,6 +9,8 @@ import be.dungeon_ucm.demo.BL.Services.InterfaceService.HeroService;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
 import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
 
+import java.util.List;
+
 public class HeroServiceImpl implements HeroService {
 
     private PersonnageServiceImpl personnageService;
@@ -93,6 +95,31 @@ public class HeroServiceImpl implements HeroService {
     @Override
     public void constitutionArmure(Personnage p) {
         personnageService.constitutionArmure(p);
+    }
+
+    @Override
+    public void etatCritique(Personnage p) {
+        personnageService.etatCritique(p);
+    }
+
+    @Override
+    public void modifierCapacite(Personnage p, int id) {
+       personnageService.modifierCapacite(p,id);
+    }
+
+    @Override
+    public List<Integer> recuperCapacite(Personnage p) {
+        return personnageService.recuperCapacite(p);
+    }
+
+    @Override
+    public void equiperArmureSimple(Personnage p, Armure armure) {
+        personnageService.equiperArmureSimple(p,armure);
+    }
+
+    @Override
+    public void equiperArmeSimple(Personnage p, Arme arme) {
+        personnageService.equiperArmeSimple(p,arme);
     }
 
 }
