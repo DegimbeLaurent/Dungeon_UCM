@@ -16,5 +16,6 @@ public interface PersonnageService {
     void modifierEtat(Personnage p, Etat etat);
     void equiperArmure(Personnage p, Armure a);
     void equiperArme(Personnage p, Arme a);
+    void subirDegat(Personnage p,int degats);
 
 }

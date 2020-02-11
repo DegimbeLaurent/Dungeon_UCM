@@ -1,6 +1,11 @@
 Service Personnage :
-1.Recuperation des PV et MANA .
-2.Retirer Armure
-3.Mettre Armure
-4.Mettre Arme
-5.retirer Arme
+1.Recuperation des PV et MANA ok
+2.Retirer Armure ok
+3.Mettre Armure ok
+4.Mettre Arme ok
+5.retirer Arme ok
+
+
+!!!!! ATTENTION !!!!!
+1. sac pour mettre les armes et les armures apres avoir echanger.
+2. Transfere Service Personnage comme Hero.

@@ -18,6 +18,12 @@ public class PersonnageServiceImpl implements PersonnageService {
         if(p.getVie()){
             p.setPointDeVie(p.getPointDeVie() + pv);
             p.setPointDeMana(p.getPointDeMana() + pm);
+            if(p.getPointDeVie() < p.getPointDeVieMax()){
+                p.setPointDeVie(p.getPointDeVieMax());
+            }
+            if(p.getPointDeMana() < p.getPointDeManaMax()){
+                p.setPointDeMana(p.getPointDeManaMax());
+            }
         }
     } // ok
 
@@ -26,12 +32,18 @@ public class PersonnageServiceImpl implements PersonnageService {
         if(p.getVie()){
             p.setPointDeVie(p.getPointDeVie() + pv);
         }
+        if(p.getPointDeVie() < p.getPointDeVieMax()){
+            p.setPointDeVie(p.getPointDeVieMax());
+        }
     } // ok
 
     @Override
     public void recupererPM(Personnage p, int pm) {
         if(p.getVie()){
             p.setPointDeMana(p.getPointDeMana() + pm);
+        }
+        if(p.getPointDeMana() < p.getPointDeManaMax()){
+            p.setPointDeMana(p.getPointDeManaMax());
         }
     } // ok
 
@@ -60,6 +72,11 @@ public class PersonnageServiceImpl implements PersonnageService {
         // sac.add( =>
         corpsServiceImpl.Armer(a,p.getCorpsAventurier());
     } // ok
+
+    @Override
+    public void subirDegat(Personnage p,int degats) {
+        
+    }
 
 
 }
