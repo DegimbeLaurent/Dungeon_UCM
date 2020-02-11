@@ -8,7 +8,6 @@ import javax.persistence.*;
 
 public class Hero extends Personnage {
 
-    private long id;
     private int pointDeChance;
     private int pointDEndurance;
     private int pointDEnduranceMax;
@@ -29,15 +28,7 @@ public class Hero extends Personnage {
         this.pointDExperienceMax = (getNiveau()*100);
     }
 
-    @Override
-    public long getId() {
-        return id;
-    }
 
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public int getPointDeChance() {
         return pointDeChance;

@@ -61,6 +61,51 @@ public class PersonnageServiceImpl implements PersonnageService {
         p.setEtat(etat);
     } // ok
 
+
+
+    @Override
+    public void subirDegatPhys(Personnage p,int degats){
+        p.setPointDeVie(p.getPointDeVie() - (degats - p.getPointDeResistancePhysique()));
+    } // ok
+
+    @Override
+    public void subirDegatMagic(Personnage p,int degats){
+        p.setPointDeVie(p.getPointDeVie() - (degats - p.getPointDeResistanceMagique()));
+    } // ok
+
+    @Override
+    public void constitutionArmure(Personnage p) {
+        p.setPointDeResistancePhysique(0);
+        p.setPointDeResistancePhysique(0);
+        for (Armure a : p.getCorpsAventurier().getArmures()) {
+            if(a.isMagicArmure()){
+                p.setPointDeResistanceMagique(p.getPointDeResistanceMagique() + a.getProtection());
+            }else{
+                p.setPointDeResistancePhysique(p.getPointDeResistancePhysique() + a.getProtection());
+            }
+        }
+    }
+
+    @Override
+    public void etatCritique(Etat p) {
+
+    }
+
+    @Override
+    public void equiperArmureSimple(Personnage p,Armure armure) {
+        // mettre arme dans sac
+        p.setCorps(armure);
+    }
+
+    @Override
+    public void equiperArmeSimple(Personnage p, Arme arme) {
+        // mettre armure dans sac
+        p.setArme(arme);
+    }
+
+
+    // Suite du projet Armure sur e corps
+
     @Override
     public void equiperArmure(Personnage p, Armure a) {
         // sac.add( =>
@@ -72,11 +117,4 @@ public class PersonnageServiceImpl implements PersonnageService {
         // sac.add( =>
         corpsServiceImpl.Armer(a,p.getCorpsAventurier());
     } // ok
-
-    @Override
-    public void subirDegat(Personnage p,int degats) {
-        
-    }
-
-
 }

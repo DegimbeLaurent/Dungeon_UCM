@@ -12,10 +12,18 @@ public interface PersonnageService {
     void recupererPv(Personnage p,int pv);
     void recupererPM(Personnage p,int pm);
     void monteeNiveau(Personnage p, LancerDeDes de);
-    String toString();
     void modifierEtat(Personnage p, Etat etat);
+
+    void subirDegatPhys(Personnage p,int degats);
+    void subirDegatMagic(Personnage p,int degats);
+    void constitutionArmure(Personnage p);
+    void etatCritique(Etat e);
+
+    void equiperArmureSimple( Personnage p, Armure armure);
+    void equiperArmeSimple( Personnage p, Arme arme);
+
+    // projet pour corps couvert d'armure et arme;
+
     void equiperArmure(Personnage p, Armure a);
     void equiperArme(Personnage p, Arme a);
-    void subirDegat(Personnage p,int degats);
-
 }

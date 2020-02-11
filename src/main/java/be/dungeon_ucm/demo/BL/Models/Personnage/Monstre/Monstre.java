@@ -13,7 +13,6 @@ import javax.persistence.Id;
 
 public class Monstre extends Personnage {
 
-    private long id;
     private boolean volant;
 
     private boolean magic;
@@ -41,15 +40,7 @@ public class Monstre extends Personnage {
         this.volant = volant;
     }
 
-    @Override
-    public long getId() {
-        return id;
-    }
 
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public boolean isVolant() {
         return volant;

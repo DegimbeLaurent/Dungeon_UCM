@@ -13,7 +13,7 @@ import javax.persistence.Id;
 
 public class Capacite {
 
-    private long id;
+    private Long id;
     private String nomCapacite;
     private int Degats;
     private int CoupCritique; // avoir avec le niv et les degat et magic ou pas
@@ -21,8 +21,8 @@ public class Capacite {
     private boolean degatSolAir;
     private int longeurDesDegats;
     private boolean genreMagic;
-    private Etat effectCritique; // ENUN
-    private NatureElement nature; // ENUN
+    private Etat effectCritique;
+    private NatureElement nature;
 
     public Capacite() {
     }

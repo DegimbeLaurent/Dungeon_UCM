@@ -9,9 +9,9 @@ import javax.persistence.*;
 
 @Getter
 @Setter
-public abstract class ItemBasique {
+public  class ItemBasique {
 
-    private long id;
+    private Long id;
 
     private int durablilite;
 

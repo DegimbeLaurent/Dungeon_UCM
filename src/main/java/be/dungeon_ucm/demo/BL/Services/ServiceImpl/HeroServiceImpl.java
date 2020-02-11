@@ -68,13 +68,31 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public void equiperArmure(Personnage p, Armure a) {
-        personnageService.equiperArmure(p,a);
+        if(p.getNiveau() <= a.getNiveauUtilisationMin()){
+            personnageService.equiperArmure(p,a);
+        }
     }
-
 
     @Override
     public void equiperArme(Personnage p, Arme a) {
-        personnageService.equiperArme(p,a);
+        if(p.getNiveau() <= a.getNiveauUtilisationMin()){
+            personnageService.equiperArme(p,a);
+        }
+    }
+
+    @Override
+    public void subirDegatPhys(Personnage p, int degats) {
+        personnageService.subirDegatPhys(p, degats);
+    }
+
+    @Override
+    public void subirDegatMagic(Personnage p, int degats) {
+        personnageService.subirDegatMagic(p, degats);
+    }
+
+    @Override
+    public void constitutionArmure(Personnage p) {
+        personnageService.constitutionArmure(p);
     }
 
 }

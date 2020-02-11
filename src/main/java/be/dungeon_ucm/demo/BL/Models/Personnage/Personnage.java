@@ -1,11 +1,16 @@
 package be.dungeon_ucm.demo.BL.Models.Personnage;
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Personnage {
 
-    private long id;
+    private Long id;
     private String nomPersonnage;
     private int pointDeVie;
     private int pointDeMana;
@@ -17,16 +22,19 @@ public class Personnage {
     private int pointDeResistanceMagique;
     private int pointDeVieMax;
     private int pointDeManaMax;
-    private Etat etat;
+    private Etat etat = Etat.NORMAL;
     private Boolean vie;
     private int niveau;
+    // Corps reste pour l'instant un projet
     private Corps corpsAventurier;
+    private Armure corps;
+    private Arme arme;
+    private List<Capacite> capacites;
 
     public Personnage() {
     }
     public Personnage(String nomPersonnage, int pointDeVie, int pointDeMana, int pointDeForce, int pointDeAgilite,
                       int pointDeIntelligence, int pointDeCharisme){
-        this.etat = Etat.NORMAL;
         this.vie = true;
         this.niveau = 1;
         this.nomPersonnage = nomPersonnage;
@@ -41,6 +49,7 @@ public class Personnage {
         this.pointDeVieMax = pointDeVie;
         this.pointDeManaMax = pointDeMana;
         this.corpsAventurier = null;
+        this.capacites = new ArrayList<Capacite>(4);
     }
 
     public long getId() {
@@ -166,6 +175,33 @@ public class Personnage {
     public void setNiveau(int niveau) {
         this.niveau = niveau;
     }
+
+
+    public Armure getCorps() {
+        return corps;
+    }
+
+    public void setCorps(Armure corps) {
+        this.corps = corps;
+    }
+
+    public Arme getArme() {
+        return arme;
+    }
+
+    public void setArme(Arme arme) {
+        this.arme = arme;
+    }
+
+    public List<Capacite> getCapacites() {
+        return capacites;
+    }
+
+    public void setCapacites(List<Capacite> capacites) {
+        this.capacites = capacites;
+    }
+
+    // projet du corps et armes
 
     public Corps getCorpsAventurier() {
         return corpsAventurier;

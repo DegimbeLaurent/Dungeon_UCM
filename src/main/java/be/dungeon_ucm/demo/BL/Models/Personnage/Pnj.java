@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 public class Pnj extends Personnage {
 
-    private long id;
 
     private String metier;
 
@@ -24,15 +23,6 @@ public class Pnj extends Personnage {
         this.label = label;
     }
 
-    @Override
-    public long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getMetier() {
         return metier;
