@@ -1,5 +1,6 @@
 package be.dungeon_ucm.demo.BL.Models.Items.Equipement;
 
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.ListeArmure.Zone;
 import be.dungeon_ucm.demo.BL.Models.Items.ItemBasique;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,15 +12,16 @@ public class Armure extends ItemBasique {
 
     private int niveauUtilisationMin;
 
-    private String zone; // zone ou on met l'armure
+    private Zone zone; // zone ou on met l'armure
 
     private boolean magicArmure;
 
-    public Armure(String nom, int durablilite, int protection, int niveauUtilisationMin, boolean magicArmure) {
+    public Armure(String nom, int durablilite, int protection, int niveauUtilisationMin, boolean magicArmure, Zone zone) {
         super(nom, durablilite);
         this.protection = protection;
         this.magicArmure = magicArmure;
         this.niveauUtilisationMin = niveauUtilisationMin;
+        this.zone = zone;
     }
 
     public Armure() {
@@ -41,11 +43,11 @@ public class Armure extends ItemBasique {
         this.niveauUtilisationMin = niveauUtilisationMin;
     }
 
-    public String getZone() {
+    public Zone getZone() {
         return zone;
     }
 
-    public void setZone(String zone) {
+    public void setZone(Zone zone) {
         this.zone = zone;
     }
 

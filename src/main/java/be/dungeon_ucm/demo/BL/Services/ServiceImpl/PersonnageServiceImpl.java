@@ -1,11 +1,17 @@
 package be.dungeon_ucm.demo.BL.Services.ServiceImpl;
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.BL.Services.InterfaceService.PersonnageService;
+import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
+import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
 
 public class PersonnageServiceImpl implements PersonnageService {
 
+    private LancerServiceImpl lancerServiceImpl;
+    private CorpsServiceImpl corpsServiceImpl;
 
     @Override
     public void recupererPvPM(Personnage p, int pv, int pm) {
@@ -30,12 +36,30 @@ public class PersonnageServiceImpl implements PersonnageService {
     } // ok
 
     @Override
-    public void monteeNiveau(Personnage p) {
-
-    }
+    public void monteeNiveau(Personnage p, LancerDeDes de) {
+        if(p.getVie()){
+            p.setNiveau(p.getNiveau() + 1);
+            p.setPointDeVieMax(lancerServiceImpl.lancer(de));
+            p.setPointDeManaMax(lancerServiceImpl.lancer(de));
+        }
+    } // ok
 
     @Override
-    public void modifierEtat(Etat etat) {
+    public void modifierEtat(Personnage p, Etat etat) {
+        p.setEtat(etat);
+    } // ok
 
-    }
+    @Override
+    public void equiperArmure(Personnage p, Armure a) {
+        // sac.add( =>
+        corpsServiceImpl.Equiper(a,p.getCorpsAventurier());
+    } // ok
+
+    @Override
+    public void equiperArme(Personnage p, Arme a) {
+        // sac.add( =>
+        corpsServiceImpl.Armer(a,p.getCorpsAventurier());
+    } // ok
+
+
 }

@@ -20,6 +20,7 @@ public class Personnage {
     private Etat etat;
     private Boolean vie;
     private int niveau;
+    private Corps corpsAventurier;
 
     public Personnage() {
     }
@@ -39,6 +40,7 @@ public class Personnage {
         this.pointDeResistanceMagique = 0;
         this.pointDeVieMax = pointDeVie;
         this.pointDeManaMax = pointDeMana;
+        this.corpsAventurier = null;
     }
 
     public long getId() {
@@ -163,5 +165,13 @@ public class Personnage {
 
     public void setNiveau(int niveau) {
         this.niveau = niveau;
+    }
+
+    public Corps getCorpsAventurier() {
+        return corpsAventurier;
+    }
+
+    public void setCorpsAventurier(Corps corpsAventurier) {
+        this.corpsAventurier = corpsAventurier;
     }
 }

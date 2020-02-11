@@ -17,6 +17,7 @@ public class Arme extends ItemBasique {
     private int tailleArme;
     private NatureElement nature;
 
+
     public Arme(String nom,int durabilite, int degatsMin, int degatsMax, int niveauUtilisationMin, boolean magicOuPas,
                 int tailleArme, NatureElement nature) {
         super(nom, durabilite);
