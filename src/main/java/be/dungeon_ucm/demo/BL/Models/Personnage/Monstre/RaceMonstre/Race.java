@@ -14,7 +14,6 @@ public enum Race {
     SOEUR("La soeur de Thomas",10,10,3,4,3,3,true,true,1,10,NatureElement.FEU,1);
 
 
-
     private String nomPersonnage;
     private int pointDeVie;
     private int pointDeMana;

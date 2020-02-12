@@ -3,7 +3,7 @@ package be.dungeon_ucm.demo.Outils.Factory.Generateur;
 import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
-import be.dungeon_ucm.demo.BL.Models.RaceMonstre.Race;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
 
 import java.security.SecureRandom;
 import java.util.Random;
