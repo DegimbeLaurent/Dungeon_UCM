@@ -78,7 +78,7 @@ public class PersonnageServiceImpl implements PersonnageService {
 
     @Override
     public void subirDegat(Personnage p,int degats) {
-        
+
     }
 
     @Override

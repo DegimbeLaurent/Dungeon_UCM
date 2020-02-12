@@ -21,6 +21,7 @@ public interface PersonnageService {
     List<Capacite> recupererCapacite(Personnage p);
 
 
+
     /// Armure et arme simple
     void equiperArmeSimple(Personnage p, Arme a);
     void equiperArmureSimple(Personnage p, Armure a);
