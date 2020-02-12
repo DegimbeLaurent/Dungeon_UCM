@@ -1,15 +1,25 @@
-package be.dungeon_ucm.demo.BL.Service.Combat;
+package be.dungeon_ucm.demo.BL.Services.Combat;
 
 import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
-import be.dungeon_ucm.demo.Outils.Factory.Generateur.MonstreGener;
+import be.dungeon_ucm.demo.Outils.Factory.Generateur.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Combat4vs4 {
+    private MonstreGener gener;
+
 
     private Equipe[] groupe = new Equipe[2];
+
+    @Autowired
+    public Combat4vs4(be.dungeon_ucm.demo.Outils.Factory.Generateur.MonstreGener gener) {
+        this.gener = gener;
+    }
 
     public Boolean combat(Equipe joureurs, NatureElement typeDonjon, int lvl){
         MonstreGener monstreGener = new MonstreGener();

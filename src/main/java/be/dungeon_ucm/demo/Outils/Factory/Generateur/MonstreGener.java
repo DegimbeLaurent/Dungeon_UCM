@@ -4,10 +4,12 @@ import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import be.dungeon_ucm.demo.BL.Models.RaceMonstre.Race;
+import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
 import java.util.Random;
 
+@Component
 public class MonstreGener{
 
     public Monstre randMonstre(NatureElement type){
