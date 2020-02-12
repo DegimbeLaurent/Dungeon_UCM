@@ -1,4 +1,4 @@
-package be.dungeon_ucm.demo.API.DTO;
+package be.dungeon_ucm.demo.API.DTO.USER;
 
 public class LogUserDTO {
 

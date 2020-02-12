@@ -25,14 +25,20 @@ public class Monstre extends Personnage {
 
     private NatureElement typeDeMonstre;
 
+    private int tauxAppartion;
+
     public Monstre() {
     }
 
-    public Monstre(String nomPersonnage, int pointDeVie, int pointDeMana, int pointDeForce, int pointDeAgilite,
-                   int pointDeIntelligence, int pointDeCharisme, boolean volant, boolean magic, int niveauMonstre,
-                   int expDonnee, Race race, NatureElement typeDeMonstre ) {
-        super(nomPersonnage, pointDeVie, pointDeMana, pointDeForce, pointDeAgilite, pointDeIntelligence, pointDeCharisme);
+    public Monstre(Race type) {
+        super(type.getNomPersonnage(),type.getPointDeVie(), type.getPointDeMana(), type.getPointDeForce(), type.getPointDeAgilite(), type.getPointDeIntelligence(), type.getPointDeCharisme());
         setNiveau(niveauMonstre);
+<<<<<<< HEAD
+        this.expDonnee = type.getExpDonnee(); // fonction du niveau et de la race ( point appar )
+        this.magic = type.isMagic();
+        this.typeDeMonstre = type.getTypeDeMonstre();
+        this.volant = type.isVolant();
+=======
         this.expDonnee = expDonnee; // fonction du niveau et de la race ( point appar )
         this.magic = magic;
         this.typeDeMonstre = typeDeMonstre;
@@ -57,6 +63,7 @@ public class Monstre extends Personnage {
     public void setMagic(boolean magic) {
         this.magic = magic;
     }
+>>>>>>> db1825c588f920d296629a007a72c47a371c31a4
 
     public int getNiveauMonstre() {
         return niveauMonstre;

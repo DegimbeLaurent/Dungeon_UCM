@@ -1,7 +1,7 @@
 package be.dungeon_ucm.demo.BL.Models.EtatNature;
 
 public enum NatureElement {
-
+    NEUTRE,
     FEU,
     EAU,
     NOIR,
