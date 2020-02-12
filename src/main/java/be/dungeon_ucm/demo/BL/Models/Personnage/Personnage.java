@@ -1,6 +1,8 @@
 package be.dungeon_ucm.demo.BL.Models.Personnage;
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
+import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
 
 
 public class Personnage {
@@ -21,6 +23,9 @@ public class Personnage {
     private Boolean vie;
     private int niveau;
     private Corps corpsAventurier;
+
+    private Armure armure;
+    private Arme arme;
 
     public Personnage() {
     }
@@ -165,6 +170,22 @@ public class Personnage {
 
     public void setNiveau(int niveau) {
         this.niveau = niveau;
+    }
+
+    public Armure getArmure() {
+        return armure;
+    }
+
+    public void setArmure(Armure armure) {
+        this.armure = armure;
+    }
+
+    public Arme getArme() {
+        return arme;
+    }
+
+    public void setArme(Arme arme) {
+        this.arme = arme;
     }
 
     public Corps getCorpsAventurier() {

@@ -78,5 +78,31 @@ public class PersonnageServiceImpl implements PersonnageService {
         
     }
 
+    @Override
+    public void equiperArmeSimple(Personnage p, Arme a) {
+
+        // mettre arme dans sac
+
+        p.setArme(a);
+    }
+
+    @Override
+    public void equiperArmureSimple(Personnage p, Armure a) {
+
+        // mettre armure dans sac
+
+        p.setArmure(a);
+    }
+
+    @Override
+    public int degatArme(Personnage p) {
+        return p.getArme().getDegatsMax();
+    }
+
+    @Override
+    public int degatArmure(Personnage p) {
+        return p.getArmure().getProtection();
+    }
+
 
 }

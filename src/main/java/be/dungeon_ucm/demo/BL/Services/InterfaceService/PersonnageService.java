@@ -14,8 +14,16 @@ public interface PersonnageService {
     void monteeNiveau(Personnage p, LancerDeDes de);
     String toString();
     void modifierEtat(Personnage p, Etat etat);
-    void equiperArmure(Personnage p, Armure a);
-    void equiperArme(Personnage p, Arme a);
     void subirDegat(Personnage p,int degats);
 
+
+    /// Armure et arme simple
+    void equiperArmeSimple(Personnage p, Arme a);
+    void equiperArmureSimple(Personnage p, Armure a);
+    int degatArme(Personnage p);
+    int degatArmure(Personnage p);
+
+    //// corps
+    void equiperArmure(Personnage p, Armure a);
+    void equiperArme(Personnage p, Arme a);
 }
