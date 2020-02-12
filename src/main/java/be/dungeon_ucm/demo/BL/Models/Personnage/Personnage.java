@@ -4,6 +4,9 @@ import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Personnage {
 
@@ -23,6 +26,7 @@ public class Personnage {
     private Boolean vie;
     private int niveau;
     private Corps corpsAventurier;
+    private List<Capacite> capacites;
 
     private Armure armure;
     private Arme arme;
@@ -46,6 +50,7 @@ public class Personnage {
         this.pointDeVieMax = pointDeVie;
         this.pointDeManaMax = pointDeMana;
         this.corpsAventurier = null;
+        this.capacites = new ArrayList<Capacite>(4);
     }
 
     public long getId() {
@@ -194,5 +199,13 @@ public class Personnage {
 
     public void setCorpsAventurier(Corps corpsAventurier) {
         this.corpsAventurier = corpsAventurier;
+    }
+
+    public List<Capacite> getCapacites() {
+        return capacites;
+    }
+
+    public void setCapacites(List<Capacite> capacites) {
+        this.capacites = capacites;
     }
 }

@@ -3,11 +3,14 @@ package be.dungeon_ucm.demo.BL.Services.ServiceImpl;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.BL.Services.InterfaceService.HeroService;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
 import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
+
+import java.util.List;
 
 public class HeroServiceImpl implements HeroService {
 
@@ -69,6 +72,11 @@ public class HeroServiceImpl implements HeroService {
     @Override
     public void subirDegat(Personnage p, int degats) {
         personnageService.subirDegat(p,degats);
+    }
+
+    @Override
+    public List<Capacite> recupererCapacite(Personnage p) {
+        return personnageService.recupererCapacite(p);
     }
 
     @Override
