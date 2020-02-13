@@ -38,12 +38,12 @@ public class UserController {
         System.out.println(postUserDTO.getPseudo());
         System.out.println(postUserDTO.getMdp());
         User user = postUserDTO.toEntity();
+        System.out.println(user.toString());
         userDAO.save(user);
-        System.out.println(user.getId());
         return ResponseEntity.ok(new UserDTO(user));
     }
     @PostMapping("/log")
-    public Boolean log(@RequestBody @Valid LogUserDTO logUserDTO ){
+    public Boolean log(@PathVariable @RequestBody @Valid LogUserDTO logUserDTO ){
         System.out.println(logUserDTO.getPseudo());
         System.out.println(logUserDTO.getMdp());
         if(userDAO.getByPseudo(logUserDTO.getPseudo()).isPresent()){
