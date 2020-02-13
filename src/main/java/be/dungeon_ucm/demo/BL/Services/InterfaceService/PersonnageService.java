@@ -19,8 +19,7 @@ public interface PersonnageService {
     void modifierEtat(Personnage p, Etat etat);
     void subirDegat(Personnage p,int degats);
     List<Capacite> recupererCapacite(Personnage p);
-
-
+    void etatSouffrant(Personnage p);
 
     /// Armure et arme simple
     void equiperArmeSimple(Personnage p, Arme a);

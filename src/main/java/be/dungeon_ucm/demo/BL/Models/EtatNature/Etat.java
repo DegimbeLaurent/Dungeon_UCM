@@ -27,4 +27,35 @@ public enum Etat {
         this.influenceSort = influenceSort;
     }
 
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public int getInfluenceEtat() {
+        return influenceEtat;
+    }
+
+    public void setInfluenceEtat(int influenceEtat) {
+        this.influenceEtat = influenceEtat;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public boolean isInfluenceSort() {
+        return influenceSort;
+    }
+
+    public void setInfluenceSort(boolean influenceSort) {
+        this.influenceSort = influenceSort;
+    }
 }
