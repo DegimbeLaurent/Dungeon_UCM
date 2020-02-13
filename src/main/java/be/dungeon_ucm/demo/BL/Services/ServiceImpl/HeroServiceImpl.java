@@ -9,9 +9,11 @@ import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.BL.Services.InterfaceService.HeroService;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
 import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class HeroServiceImpl implements HeroService {
 
     private PersonnageServiceImpl personnageService;

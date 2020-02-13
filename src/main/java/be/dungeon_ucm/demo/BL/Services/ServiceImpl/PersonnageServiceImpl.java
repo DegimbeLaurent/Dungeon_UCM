@@ -20,6 +20,7 @@ public class PersonnageServiceImpl implements PersonnageService {
 
     private CorpsServiceImpl corpsServiceImpl;
 
+
     @Override
     public void recupererPvPM(Personnage p, int pv, int pm) {
             p.setPointDeVie(p.getPointDeVie() + pv);
