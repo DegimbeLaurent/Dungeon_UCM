@@ -64,8 +64,12 @@ public class HeroServiceImpl implements HeroService {
         personnageService.modifierEtat(p, etat);
     }
     @Override
-    public void subirDegat(Personnage p, int degats) {
-        personnageService.subirDegat(p,degats);
+    public void subirDegatPhys(Personnage p, int degats) {
+        personnageService.subirDegatPhys(p,degats);
+    }
+    @Override
+    public void subirDegatMagic(Personnage p, int degats) {
+        personnageService.subirDegatMagic(p, degats);
     }
     @Override
     public List<Capacite> recupererCapacite(Personnage p) {
@@ -75,6 +79,12 @@ public class HeroServiceImpl implements HeroService {
     public void etatSouffrant(Personnage p) {
         personnageService.etatSouffrant(p);
     }
+
+    @Override
+    public void degatDeCapacite(Personnage p, Capacite c) {
+        personnageService.degatDeCapacite(p, c);
+    }
+
     @Override
     public void equiperArmeSimple(Personnage p, Arme a) {
         personnageService.equiperArmeSimple(p,a);

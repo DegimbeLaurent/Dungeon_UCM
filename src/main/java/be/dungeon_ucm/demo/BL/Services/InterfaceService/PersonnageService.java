@@ -17,9 +17,11 @@ public interface PersonnageService {
     void monteeNiveau(Personnage p, LancerDeDes de);
     String toString();
     void modifierEtat(Personnage p, Etat etat);
-    void subirDegat(Personnage p,int degats);
+    void subirDegatPhys(Personnage p,int degats);
+    void subirDegatMagic(Personnage p,int degats);
     List<Capacite> recupererCapacite(Personnage p);
     void etatSouffrant(Personnage p);
+    void degatDeCapacite(Personnage p, Capacite c);
 
     /// Armure et arme simple
     void equiperArmeSimple(Personnage p, Arme a);

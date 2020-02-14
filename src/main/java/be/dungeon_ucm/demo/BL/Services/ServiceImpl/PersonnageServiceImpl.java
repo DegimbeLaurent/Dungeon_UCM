@@ -71,6 +71,14 @@ public class PersonnageServiceImpl implements PersonnageService {
         }
     }
     @Override
+    public void degatDeCapacite(Personnage p, Capacite c) {
+        if(!c.isGenreMagic()){
+            subirDegatPhys(p, c.getDegats());
+        }else{
+            subirDegatMagic(p, c.getDegats());
+        }
+    }
+    @Override
     public void equiperArmure(Personnage p, Armure a) {
         // sac.add( =>
         corpsServiceImpl.Equiper(a,p.getCorpsAventurier());
@@ -81,8 +89,12 @@ public class PersonnageServiceImpl implements PersonnageService {
         corpsServiceImpl.Armer(a,p.getCorpsAventurier());
     } // ok
     @Override
-    public void subirDegat(Personnage p,int degats) {
-
+    public void subirDegatPhys(Personnage p,int degats) {
+        p.setPointDeVie(p.getPointDeVie() + p.getPointDeResistancePhysique() - degats);
+    }
+    @Override
+    public void subirDegatMagic(Personnage p, int degats) {
+        p.setPointDeVie(p.getPointDeVie() + p.getPointDeResistanceMagique() - degats);
     }
     @Override
     public List<Capacite> recupererCapacite(Personnage p) {
