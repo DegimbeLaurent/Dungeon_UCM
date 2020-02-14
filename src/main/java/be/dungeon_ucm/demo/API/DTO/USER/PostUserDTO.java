@@ -21,7 +21,7 @@ public class PostUserDTO {
 
     public User toEntity(){
         User user = new User();
-        user.setId(0);
+        //user.setId(0);
         user.setNom(getNom());
         user.setMdp(getMdp());
         user.setPseudo(getPseudo());

@@ -39,16 +39,31 @@ public class UserController {
         System.out.println(postUserDTO.getMdp());
         User user = postUserDTO.toEntity();
         System.out.println(user.toString());
-        userDAO.save(user);
+        user = new User();
+        user.setNom("unendiel");
+        user.setMdp("123456");
+        user.setPseudo("unendiel1");
+        //user.setId(1);
+        try {
+            System.out.println("avant save " + user);
+            userDAO.save(user);
+            System.out.println("YOU WON");
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("ok");
         return ResponseEntity.ok(new UserDTO(user));
     }
     @PostMapping("/log")
-    public Boolean log(@PathVariable @RequestBody @Valid LogUserDTO logUserDTO ){
+    public Boolean log( @RequestBody @Valid LogUserDTO logUserDTO ){
         System.out.println(logUserDTO.getPseudo());
         System.out.println(logUserDTO.getMdp());
-        if(userDAO.getByPseudo(logUserDTO.getPseudo()).isPresent()){
-            Optional<User> Opuser = userDAO.getByPseudo(logUserDTO.getPseudo());
-            User user = Opuser.get();
+        Optional<User> u = userDAO.getByPseudo(logUserDTO.getPseudo());
+        if(u.isPresent()){
+
+            User user = u.get();
             if(user.getMdp().equals(logUserDTO.getMdp())) {
                 return true;
             }

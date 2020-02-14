@@ -14,14 +14,13 @@ import java.util.Date;
 @NoArgsConstructor
 @Table(name = "Game_User")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Integer id;
     @Column(name = "user_nom")
     private String nom;
-    @Column(name = "user_mdp",nullable = false)
+    @Column(name = "user_mdp",nullable = true)
     private String mdp;
     @Column(name = "user_pseudo",unique = true,nullable = false)
     private String pseudo;

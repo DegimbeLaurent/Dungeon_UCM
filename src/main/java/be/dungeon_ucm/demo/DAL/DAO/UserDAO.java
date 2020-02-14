@@ -9,9 +9,6 @@ import javax.jws.soap.SOAPBinding;
 import java.util.Optional;
 
 
-public interface UserDAO extends JpaRepository<User,Long> {
+public interface UserDAO extends JpaRepository<User,Integer> {
     Optional<User> getByPseudo(String pseudo);
-
-    @Override
-    <S extends User> S save(S s);
 }
