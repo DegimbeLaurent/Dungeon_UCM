@@ -60,6 +60,6 @@ public class MonstreGener{
     }
     public int rand(int max){
         Random r = new Random();
-        return 0 + r.nextInt(max - 0);
+        return r.nextInt(max - 0);
     }
 }
