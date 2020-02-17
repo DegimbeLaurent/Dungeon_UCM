@@ -1,7 +1,12 @@
 package be.dungeon_ucm.demo.BL.Services.Combat;
 
 import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Consommable;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjectRecupStat;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjetSoin;
+import be.dungeon_ucm.demo.BL.Models.Items.ItemBasique;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
@@ -10,6 +15,7 @@ import be.dungeon_ucm.demo.Outils.Factory.Generateur.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.security.cert.CertificateRevokedException;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,24 +33,24 @@ public class Combat4vs4 {
         this.personnageService = personnageService;
     }
 
-    public Boolean combat(Equipe joureurs, NatureElement typeDonjon, int lvl){
-        MonstreGener monstreGener = new MonstreGener();
-        groupe[0] = joureurs;
-        groupe[1] = monstreGener.DesMonstre(typeDonjon,lvl,4);
-        Set<Long> ordrePer = ordrePassage(groupe);
-        while ((groupe[0].getVivants() && groupe[1].getVivants()) || groupe[0].getFuir()){
-            for (Long personnage:ordrePer) {
 
-            }
+
+    public Personnage UseObjet(Personnage personnage, Consommable popo) {
+        if (popo instanceof ObjetSoin) {
+            personnageService.recupererPv(personnage, ((ObjetSoin) popo).getPointDeSoin());
+        }else if(popo instanceof ObjectRecupStat){
+            personnageService.modifierEtat(personnage,Etat.NORMAL);
+        }else{
+            System.out.println(-42);
         }
-        return true;
+        return personnage;
     }
 
-    private Set<Long> ordrePassage(Equipe[] groupe){
-        Personnage[] TabTrierPersonnage = new Personnage[(groupe[0].getEquipe().length+groupe[1].getEquipe().length)];
-        System.arraycopy(groupe[0].getEquipe(),0,TabTrierPersonnage,0,groupe[0].getEquipe().length);
-        System.arraycopy(groupe[1].getEquipe(),0,TabTrierPersonnage,groupe[0].getEquipe().length,groupe[1].getEquipe().length);
-        Set<Long> idperso = new HashSet<>();
+    public Long[] ordrePassage(Personnage[] hero,Personnage[] monstre){
+        Personnage[] TabTrierPersonnage = new Personnage[(hero.length+monstre.length)];
+        System.arraycopy(hero,0,TabTrierPersonnage,0,hero.length);
+        System.arraycopy(monstre,0,TabTrierPersonnage,hero.length,monstre.length);
+        Long[] idperso = new Long[TabTrierPersonnage.length];
         for (int i = 0; i < TabTrierPersonnage.length; i++) {
             Personnage save;
             for (int j=TabTrierPersonnage.length-1; j > i; j--) {
@@ -55,22 +61,37 @@ public class Combat4vs4 {
                 }
             }
         }
-        for (Personnage personnage: TabTrierPersonnage) {
-            idperso.add(personnage.getId());
+        for (int i = 0; i <TabTrierPersonnage.length ; i++) {
+            idperso[i] = TabTrierPersonnage[i].getId();
         }
         return idperso;
     }
 
-    private Set<Personnage> frapper(Personnage[] personnagetab,int cap){
+    public Personnage[] frapper(Personnage[] personnagetab,int cap){
         if(personnagetab[0].getCapacites().get(cap).isGenreMagic()){
             personnageService.subirDegatMagic(
-                    personnagetab[0],
-                    personnagetab[1].getPointDeIntelligence()
+                    personnagetab[1],
+                    (personnagetab[0].getPointDeIntelligence()+personnagetab[0].getCapacites().get(cap).getDegats())
             );
+            if(gener.rand(100)<=personnagetab[0].getCapacites().get(cap).getCoupCritique()){
+                personnageService.modifierEtat(
+                        personnagetab[1],
+                        Etat.NORMAL // ????????????????????? fk
+                );
+            }
         }else{
-
+            personnageService.subirDegatPhys(
+                    personnagetab[1],
+                    (personnagetab[0].getPointDeForce()+personnagetab[0].getCapacites().get(cap).getDegats())
+            );
+            if(gener.rand(100)<=personnagetab[0].getCapacites().get(cap).getCoupCritique()){
+                personnageService.modifierEtat(
+                        personnagetab[1],
+                        Etat.NORMAL // ????????????????????? fk
+                );
+            }
         }
-
+        return personnagetab;
     }
 
 }

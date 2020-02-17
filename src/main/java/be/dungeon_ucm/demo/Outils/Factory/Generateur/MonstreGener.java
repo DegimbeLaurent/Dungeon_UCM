@@ -4,6 +4,7 @@ import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
@@ -50,12 +51,12 @@ public class MonstreGener{
         return monstre;
     }
 
-    public Equipe DesMonstre(NatureElement type , int lvldonjon, int nbr){
+    public Personnage[] DesMonstre(NatureElement type , int lvldonjon, int nbr){
         Monstre[] monstres = new Monstre[nbr-1];
         for (int i = 0; i < nbr; i++) {
             monstres[i] = getMonstre(type,lvldonjon);
         }
-        return new Equipe(false,monstres);
+        return monstres;
     }
     public int rand(int max){
         Random r = new Random();
