@@ -51,7 +51,6 @@ public class CombatController {
         for (Personnage perso:a) {
             perso.setCapacites(capacites);
         }
-
         return new CombatStarDTO(a,NatureElement.FEU,1);
     }
 
