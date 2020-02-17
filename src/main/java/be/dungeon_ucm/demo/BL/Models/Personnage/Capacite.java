@@ -36,8 +36,85 @@ public class Capacite {
         this.longeurDesDegats = longeurDesDegats;
         this.effectCritique = effectCritique;
         this.nature = nature;
-
     }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getNomCapacite() {
+        return nomCapacite;
+    }
+
+    public void setNomCapacite(String nomCapacite) {
+        this.nomCapacite = nomCapacite;
+    }
+
+    public int getDegats() {
+        return Degats;
+    }
+
+    public void setDegats(int degats) {
+        Degats = degats;
+    }
+
+    public int getCoupCritique() {
+        return CoupCritique;
+    }
+
+    public void setCoupCritique(int coupCritique) {
+        CoupCritique = coupCritique;
+    }
+
+    public int getNiveauMin() {
+        return niveauMin;
+    }
+
+    public void setNiveauMin(int niveauMin) {
+        this.niveauMin = niveauMin;
+    }
+
+    public boolean isDegatSolAir() {
+        return degatSolAir;
+    }
+
+    public void setDegatSolAir(boolean degatSolAir) {
+        this.degatSolAir = degatSolAir;
+    }
+
+    public int getLongeurDesDegats() {
+        return longeurDesDegats;
+    }
+
+    public void setLongeurDesDegats(int longeurDesDegats) {
+        this.longeurDesDegats = longeurDesDegats;
+    }
+
+    public boolean isGenreMagic() {
+        return genreMagic;
+    }
+
+    public void setGenreMagic(boolean genreMagic) {
+        this.genreMagic = genreMagic;
+    }
+
+    public Etat getEffectCritique() {
+        return effectCritique;
+    }
+
+    public void setEffectCritique(Etat effectCritique) {
+        this.effectCritique = effectCritique;
+    }
+
+    public NatureElement getNature() {
+        return nature;
+    }
+
+    public void setNature(NatureElement nature) {
+        this.nature = nature;
+    }
 }

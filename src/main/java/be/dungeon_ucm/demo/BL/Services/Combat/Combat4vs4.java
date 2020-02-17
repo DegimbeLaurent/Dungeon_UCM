@@ -31,14 +31,10 @@ public class Combat4vs4 {
         MonstreGener monstreGener = new MonstreGener();
         groupe[0] = joureurs;
         groupe[1] = monstreGener.DesMonstre(typeDonjon,lvl,4);
-        Personnage[] ordrePer = ordrePassage(groupe);
+        Set<Long> ordrePer = ordrePassage(groupe);
         while ((groupe[0].getVivants() && groupe[1].getVivants()) || groupe[0].getFuir()){
-            for (Personnage personnage:ordrePer) {
-                if(personnage.getClass()==Monstre.class){
+            for (Long personnage:ordrePer) {
 
-                }
-                if(personnage.getClass()== Hero.class){
-                }
             }
         }
         return true;
@@ -65,8 +61,16 @@ public class Combat4vs4 {
         return idperso;
     }
 
-    private Set<Personnage> frapper(Personnage[] personnagetab,Integer cap){
-        personnageService.subirDegat();
+    private Set<Personnage> frapper(Personnage[] personnagetab,int cap){
+        if(personnagetab[0].getCapacites().get(cap).isGenreMagic()){
+            personnageService.subirDegatMagic(
+                    personnagetab[0],
+                    personnagetab[1].getPointDeIntelligence()
+            );
+        }else{
+
+        }
+
     }
 
 }

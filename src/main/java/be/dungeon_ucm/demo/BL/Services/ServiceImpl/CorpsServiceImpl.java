@@ -4,9 +4,10 @@ import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Corps;
 import be.dungeon_ucm.demo.BL.Services.InterfaceService.CorpsService;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CorpsServiceImpl implements CorpsService {
-
     @Override
     public Armure Equiper(Armure ar, Corps c) {
         Armure ancienne = ar;
@@ -20,7 +21,6 @@ public class CorpsServiceImpl implements CorpsService {
         }
         return ancienne;
     }
-
     @Override
     public Arme Armer(Arme ar, Corps c) {
         Arme ancien = ar;
@@ -54,27 +54,31 @@ public class CorpsServiceImpl implements CorpsService {
         }
         return ancien;
     }
-
     @Override
-    public void comparerArmure(Armure ar, Corps c) {
+    public String comparerArmure(Armure ar, Corps c) {
+        String msg = "";
         for (Armure a: c.getArmures()) {
             if(a.getZone() == ar.getZone()){
                 if(a.getProtection() < ar.getProtection()){
-                    // ecrire quelque chose
+                    msg = "L'armure nouvelle est meilleur";
+                }else{
+                    msg = "bof";
                 }
             }
-
         }
+        return msg + "choisisez";
     }
-
     @Override
-    public void compareArme(Arme ar, Corps c) {
+    public String compareArme(Arme ar, Corps c) {
+        String msg = "";
         for (Arme a: c.getMain()) {
             if(a.getDegatsMax() < ar.getDegatsMax()){
-                // ecrire qlq chose
+               msg = "L'arme nouvelle est meilleur";
+            }else{
+                msg = "bof";
             }
-
         }
+        return msg + "choisisez ";
     }
 
 }

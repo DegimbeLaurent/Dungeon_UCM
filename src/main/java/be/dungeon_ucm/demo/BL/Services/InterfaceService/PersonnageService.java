@@ -3,8 +3,11 @@ package be.dungeon_ucm.demo.BL.Services.InterfaceService;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
+
+import java.util.List;
 
 public interface PersonnageService {
 
@@ -14,8 +17,11 @@ public interface PersonnageService {
     void monteeNiveau(Personnage p, LancerDeDes de);
     String toString();
     void modifierEtat(Personnage p, Etat etat);
-    void subirDegat(Personnage p,int degats);
-
+    void subirDegatPhys(Personnage p,int degats);
+    void subirDegatMagic(Personnage p,int degats);
+    List<Capacite> recupererCapacite(Personnage p);
+    void etatSouffrant(Personnage p);
+    void degatDeCapacite(Personnage p, Capacite c);
 
     /// Armure et arme simple
     void equiperArmeSimple(Personnage p, Arme a);

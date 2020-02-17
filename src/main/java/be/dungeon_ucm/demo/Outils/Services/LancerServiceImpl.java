@@ -1,9 +1,11 @@
 package be.dungeon_ucm.demo.Outils.Services;
 
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
+import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
+@Service
 public class LancerServiceImpl implements LancerService {
 
     @Override

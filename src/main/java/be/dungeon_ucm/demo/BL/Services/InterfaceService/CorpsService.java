@@ -8,8 +8,8 @@ public interface CorpsService {
 
     Armure Equiper(Armure ar, Corps c);
     Arme Armer(Arme ar, Corps c);
-    void comparerArmure(Armure ar, Corps c);
-    void compareArme(Arme ar , Corps c);
+    String comparerArmure(Armure ar, Corps c);
+    String compareArme(Arme ar , Corps c);
 
 
 }

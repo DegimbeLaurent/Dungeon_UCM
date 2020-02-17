@@ -8,4 +8,5 @@ public interface HeroService extends PersonnageService {
     void actionHero(Hero h);
     void monteeNiveau(Hero h, LancerDeDes de);
     void RecupEndurance(Hero h, int pe);
+
 }

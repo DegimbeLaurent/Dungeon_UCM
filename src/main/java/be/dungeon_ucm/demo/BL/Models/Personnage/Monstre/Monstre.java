@@ -2,7 +2,11 @@ package be.dungeon_ucm.demo.BL.Models.Personnage.Monstre;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
+<<<<<<< HEAD
 import be.dungeon_ucm.demo.BL.Models.*;
+=======
+import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
+>>>>>>> 2930082c49c9d5b4406ef4a4b668bd0d45020b02
 import lombok.Getter;
 import lombok.Setter;
 
