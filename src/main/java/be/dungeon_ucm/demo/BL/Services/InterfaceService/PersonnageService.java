@@ -11,16 +11,37 @@ import java.util.List;
 
 public interface PersonnageService {
 
+    //
     void recupererPvPM(Personnage p,int pv, int pm);
+
+    //
     void recupererPv(Personnage p,int pv);
+
+    //
     void recupererPM(Personnage p,int pm);
+
+    //
     void monteeNiveau(Personnage p, LancerDeDes de);
+
+    //
     String toString();
+
+    //
     void modifierEtat(Personnage p, Etat etat);
+
+    //
     void subirDegatPhys(Personnage p,int degats);
+
+    //
     void subirDegatMagic(Personnage p,int degats);
+
+    //
     List<Capacite> recupererCapacite(Personnage p);
+
+    //
     void etatSouffrant(Personnage p);
+
+    //
     void degatDeCapacite(Personnage p, Capacite c);
 
     /// Armure et arme simple
