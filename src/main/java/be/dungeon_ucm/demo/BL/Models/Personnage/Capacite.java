@@ -29,7 +29,9 @@ public class Capacite {
 
     public Capacite( String nomCapacite, int degats, int coupCritique, int niveauMin, boolean degatSolAir,
                     int longeurDesDegats, boolean genreMagic, Etat effectCritique, NatureElement nature) {
+        this.nomCapacite = nomCapacite;
         this.CoupCritique = coupCritique;
+        this.niveauMin = niveauMin;
         this.degats = degats;
         this.degatSolAir = degatSolAir;
         this.genreMagic = genreMagic;

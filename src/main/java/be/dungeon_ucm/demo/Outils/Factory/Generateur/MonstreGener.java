@@ -1,13 +1,16 @@
 package be.dungeon_ucm.demo.Outils.Factory.Generateur;
 
 import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
+import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
+import java.util.List;
 import java.util.Random;
 
 @Component
@@ -48,6 +51,16 @@ public class MonstreGener{
         monstre.setPointDeResistanceMagique(monstre.getPointDeResistanceMagique()*lvldonjon);
         monstre.setPointDeResistancePhysique(monstre.getPointDeResistancePhysique()*lvldonjon);
         monstre.setTypeDeMonstre(type);
+        Capacite capacite1 = new Capacite("boule de feu",6,10,1,false,1,true, Etat.BRULEE, NatureElement.FEU);
+        Capacite capacite2 = new Capacite("boule de glace",6,10,1,false,1,true,Etat.GELE, NatureElement.GLACE);
+        Capacite capacite3 = new Capacite("coup de pied",6,10,1,false,1,false,Etat.NORMAL, NatureElement.NEUTRE);
+        Capacite capacite4 = new Capacite("coup de tête",6,10,1,false,1,false,Etat.NORMAL, NatureElement.NEUTRE);
+        List<Capacite> capacites = null;
+        capacites.add(capacite1);
+        capacites.add(capacite2);
+        capacites.add(capacite3);
+        capacites.add(capacite4);
+        monstre.setCapacites(capacites);
         return monstre;
     }
 

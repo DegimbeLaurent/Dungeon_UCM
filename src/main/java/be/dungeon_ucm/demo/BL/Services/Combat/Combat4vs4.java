@@ -76,7 +76,7 @@ public class Combat4vs4 {
             if(gener.rand(100)<=personnagetab[0].getCapacites().get(cap).getCoupCritique()){
                 personnageService.modifierEtat(
                         personnagetab[1],
-                        Etat.NORMAL // ????????????????????? fk
+                        personnagetab[0].getCapacites().get(cap).getEffectCritique() // ????????????????????? fk
                 );
             }
         }else{
@@ -87,7 +87,7 @@ public class Combat4vs4 {
             if(gener.rand(100)<=personnagetab[0].getCapacites().get(cap).getCoupCritique()){
                 personnageService.modifierEtat(
                         personnagetab[1],
-                        Etat.NORMAL // ????????????????????? fk
+                        personnagetab[0].getCapacites().get(cap).getEffectCritique()
                 );
             }
         }
