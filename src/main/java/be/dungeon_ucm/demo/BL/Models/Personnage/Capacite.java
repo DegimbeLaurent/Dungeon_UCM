@@ -15,7 +15,7 @@ public class Capacite {
 
     private long id;
     private String nomCapacite;
-    private int Degats;
+    private int degats;
     private int CoupCritique; // avoir avec le niv et les degat et magic ou pas
     private int niveauMin;
     private boolean degatSolAir;
@@ -30,7 +30,7 @@ public class Capacite {
     public Capacite( String nomCapacite, int degats, int coupCritique, int niveauMin, boolean degatSolAir,
                     int longeurDesDegats, boolean genreMagic, Etat effectCritique, NatureElement nature) {
         this.CoupCritique = coupCritique;
-        this.Degats = degats;
+        this.degats = degats;
         this.degatSolAir = degatSolAir;
         this.genreMagic = genreMagic;
         this.longeurDesDegats = longeurDesDegats;
@@ -55,11 +55,11 @@ public class Capacite {
     }
 
     public int getDegats() {
-        return Degats;
+        return degats;
     }
 
     public void setDegats(int degats) {
-        Degats = degats;
+        degats = degats;
     }
 
     public int getCoupCritique() {
