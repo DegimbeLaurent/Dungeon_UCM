@@ -1,6 +1,5 @@
 package be.dungeon_ucm.demo.Outils.Factory.Generateur;
 
-import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;

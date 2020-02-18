@@ -16,11 +16,13 @@ public class Donjon {
     @Column(name = "Donjon_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-    @ManyToOne(targetEntity = Save.class)
+
     @Column(name = "Donjon_IDSave", nullable = false)
     private Long IDSave;
+
     @Column(name = "Donjon_type", nullable = false)
     private String type;
+
     @Column(name = "Donjon_lvl", nullable = false)
     private int lvl;
 
