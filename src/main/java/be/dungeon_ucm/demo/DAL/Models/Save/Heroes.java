@@ -18,8 +18,8 @@ public class Heroes {
     @Column(name = "Heroe_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-    @Column(name = "Heroe_IDSave", nullable = false)
-    private Long IDSave;
+    @ManyToOne
+    private Save Save;
     @Column(name = "Heroe_nomPersonnage", nullable = false)
     private String nomPersonnage;
     @Column(name = "Heroe_pointDeForce", nullable = false)
@@ -40,4 +40,12 @@ public class Heroes {
     private int pointDeManaMax;
     @Column(name = "Heroe_niveau", nullable = false)
     private int niveau;
+    @Column(name = "Heroe_pointDeChance", nullable = false)
+    private int pointDeChance;
+    @Column(name = "Heroe_pointDEndurance", nullable = false)
+    private int pointDEndurance;
+    @Column(name = "Heroe_pointDEnduranceMax", nullable = false)
+    private int pointDEnduranceMax;
+    @Column(name = "Heroe_pointDExperience", nullable = false)
+    private int pointDExperience;
 }
