@@ -1,7 +1,5 @@
 package be.dungeon_ucm.demo.Outils.Factory.Generateur;
 
-import be.dungeon_ucm.demo.BL.Models.Donjons.Donjon;
-import be.dungeon_ucm.demo.BL.Models.Donjons.Salle;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import org.springframework.stereotype.Component;
 
