@@ -12,7 +12,9 @@ import java.util.Random;
 @Component
 public class DonjonGener {
 
-    // Appel la salle Couloirs
+    // Type de Salle
+
+    // Appel la salle  type :Couloirs
     public Salle creationDeCouloirs(int id ,int poX,int poY){
         Salle sal = new Salle();
         sal.setId((long)id);
@@ -22,7 +24,7 @@ public class DonjonGener {
         return sal;
     }
 
-    // Appel la salle avec la recuperation
+    // Appel la salle type : recuperation
     public Salle creationDeRelax(int id ,int poX,int poY){
         Salle sal = new Salle();
         sal.setId((long)id);
@@ -32,7 +34,7 @@ public class DonjonGener {
         return sal;
     }
 
-    // Appel la Salle avec le piege
+    // Appel la Salle type : piege
     public Salle creationDePiege(int id ,int poX,int poY){
         Salle sal = new Salle();
         sal.setId((long)id);
@@ -42,7 +44,7 @@ public class DonjonGener {
         return sal;
     }
 
-    // Appel la salle qui fait les Combats
+    // Appel la salle type : combat
     public Salle creationDeCombat(int id ,int poX,int poY){
         Salle sal = new Salle();
         sal.setId((long)id);
@@ -52,7 +54,7 @@ public class DonjonGener {
         return sal;
     }
 
-    // Appeller lorsqu'on veut recreer un salle diffèrents des autres genre Entrée, .. etc
+    // Appel de salle qui sont a paramètre spéciale type Entrée , boss , mini-boss
     public Salle creationDautreSalle(int id ,int poX, int poY, String type){
         Salle sal = new Salle();
         sal.setCoordonneeX(poX);
@@ -61,6 +63,8 @@ public class DonjonGener {
         sal.setType(type);
         return sal;
     }
+
+    // Remplir une Carte de Salle genre Aléatoirement
 
     // Creation de la map qui renvoie une list de Salle
     // list Finale : carte, list Provisoire : listeSalle
@@ -83,25 +87,39 @@ public class DonjonGener {
                         zoneDeLaSalle = new Random(4).nextInt();
 
                         switch (zoneDeLaSalle){
-
                             case 1:
+                                poX = a.getCoordonneeX() + 1;
+                                poY = a.getCoordonneeY();
+                                if(poX != (lvlDonjon*5) && poX != (lvlDonjon*5 -1)){
+                                    creationDeCouloirs(id++,poX,poY);
+                                    ajoutDelaSalle(id++,(poX+2),poY);
+                                }
 
                                 break;
 
                             case 2:
-
+                                poX = a.getCoordonneeX() - 1;
+                                poY = a.getCoordonneeY();
                                 break;
 
                             case 3:
-
+                                poX = a.getCoordonneeX();
+                                poY = a.getCoordonneeY() + 1;
                                 break;
 
                             default:
-
+                                poX = a.getCoordonneeX();
+                                poY = a.getCoordonneeY() - 1;
                                 break;
                         }
                         pourcentageNbSalle -= 20;
                     }
+                }
+                if(contient(a, carte)){
+                    listeSalle.remove(a);
+                }else{
+                    listeSalle.remove(a);
+                    carte.add(a);
                 }
             }
 
@@ -114,6 +132,7 @@ public class DonjonGener {
         return carte;
     }
 
+    // Méthode static qui verifie Si une salle est bien dans la liste
     public static boolean contient(Salle salle, List<Salle> carte){
         boolean cont = false;
         for (Salle a : carte) {
@@ -126,8 +145,9 @@ public class DonjonGener {
         return cont;
     }
 
+    // type de salle Spécial
 
-    // Ajoute une salle au hasard dans le donjon parmi une autre
+    // Creation d'un salle en utilisisant les méthodes de Salle Type
     public Salle ajoutDelaSalle(int a,int poXpres, int poYpres){
         Salle salle = null;
         int pourcentage = new Random(100).nextInt();
@@ -140,6 +160,8 @@ public class DonjonGener {
         }
         return salle;
     }
+
+    // Méthode de creation du Donjon
 
     // Zone de creation du donjon ou on le replit grace a la  creationDeLaMap
     public Donjon creationDeDonjon(int lvlDonjon, NatureElement natureElement){
