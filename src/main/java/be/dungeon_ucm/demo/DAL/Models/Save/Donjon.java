@@ -17,6 +17,10 @@ public class Donjon {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
+    @OneToOne
+    private Save Save;
+
+
     @Column(name = "Donjon_IDSave", nullable = false)
     private Long IDSave;
 

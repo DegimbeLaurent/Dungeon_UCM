@@ -1,10 +1,12 @@
 package be.dungeon_ucm.demo.DAL.Models.Save;
 
 
+import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,5 +24,6 @@ public class Equipe {
     private Long IDDonjon;
     @Column(name = "Equip_heroesList")
     @OneToMany(targetEntity = Heroes.class)
-    private List<Heroes> heroesList;
+    private Set<Heroes> heroesList;
+
 }

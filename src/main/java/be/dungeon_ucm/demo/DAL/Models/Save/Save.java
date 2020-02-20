@@ -3,6 +3,7 @@ package be.dungeon_ucm.demo.DAL.Models.Save;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -18,5 +19,11 @@ public class Save {
     private Long ID;
     @Column(name = "Save_IDUser", nullable = false)
     private Long IDUser;
+
+    @OneToMany(targetEntity = Heroes.class)
+    private Set<Heroes> heroesSet;
+
+    @OneToOne
+    private Donjon donjon;
 
 }

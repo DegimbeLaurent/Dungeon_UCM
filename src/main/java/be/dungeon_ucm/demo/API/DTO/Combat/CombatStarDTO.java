@@ -1,32 +1,38 @@
 package be.dungeon_ucm.demo.API.DTO.Combat;
 
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
-import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
-import be.dungeon_ucm.demo.Outils.Factory.Generateur.MonstreGener;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.ToString;
 
 @Getter
 @Setter
+@ToString
 public class CombatStarDTO {
 
-    private Personnage[] joueurs;
-    private Personnage[] Monstre;
-    private NatureElement TypeDonjon;
+    private Hero[] joueurs;
+    private Monstre[] monstre;
+    private String typeDonjon;
     private int lvlDonjon;
     private Long[] ordre;
 
-    public CombatStarDTO(Personnage[] joueurs, Personnage[] monstre, NatureElement typeDonjon, int lvlDonjon) {
+    public CombatStarDTO(Hero[] joueurs, Monstre[] monstre, String typeDonjon, int lvlDonjon) {
         this.joueurs = joueurs;
-        Monstre = monstre;
-        TypeDonjon = typeDonjon;
+        this.monstre = monstre;
+        this.typeDonjon = typeDonjon;
         this.lvlDonjon = lvlDonjon;
     }
 
-    public CombatStarDTO(Personnage[] joueurs, NatureElement typeDonjon, int lvlDonjon) {
+    public CombatStarDTO(Hero[] joueurs, String typeDonjon, int lvlDonjon) {
         this.joueurs = joueurs;
-        TypeDonjon = typeDonjon;
+        this.typeDonjon = typeDonjon;
         this.lvlDonjon = lvlDonjon;
+        System.out.println("constr full");
+    }
+
+    public CombatStarDTO() {
+        System.out.println("constr vide");
     }
 }

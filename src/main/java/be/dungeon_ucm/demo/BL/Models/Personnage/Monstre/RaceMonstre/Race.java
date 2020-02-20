@@ -11,7 +11,7 @@ public enum Race {
     DRAGON("Dragon",10,10,3,4,3,3,true,true,1,10, NatureElement.FEU,10),
     VACHE("Vache",10,10,3,4,3,3,true,true,1,10,NatureElement.FEU,60),
     TROLL("Troll",10,10,3,4,3,3,true,true,1,10,NatureElement.FEU,40),
-    SOEUR("La soeur de Thomas",10,10,3,4,3,3,true,true,1,10,NatureElement.FEU,1);
+    SOEUR("La soeur de Thomas",10,10,3,4,3,3,true,true,1,10,NatureElement.INCONNU,1);
 
 
     private String nomPersonnage;
