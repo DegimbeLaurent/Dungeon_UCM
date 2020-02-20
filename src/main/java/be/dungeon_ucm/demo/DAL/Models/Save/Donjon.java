@@ -20,8 +20,13 @@ public class Donjon {
     @OneToOne
     private Save Save;
 
+
+    @Column(name = "Donjon_IDSave", nullable = false)
+    private Long IDSave;
+
     @Column(name = "Donjon_type", nullable = false)
     private String type;
+
     @Column(name = "Donjon_lvl", nullable = false)
     private int lvl;
 

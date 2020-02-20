@@ -15,7 +15,7 @@ public abstract class ItemBasique {
 
     private int durablilite;
 
-    private Ingrediant ingrediant; // Liste des ingredient pour le recuperer
+    private String ingrediant; // Liste des ingredient pour le recuperer
 
     private String nom;
 

@@ -16,8 +16,9 @@ public class Salle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
 
-    //@ManyToOne(targetEntity = Donjon.class)
-    //private Long IDDonjon;
+    @ManyToOne(targetEntity = Donjon.class)
+    @Column(name = "Salle_IDDonjon")
+    private Long IDDonjon;
     @Column(name = "Salle_posy")
     private int posy;
     @Column(name = "Salle_posx")
