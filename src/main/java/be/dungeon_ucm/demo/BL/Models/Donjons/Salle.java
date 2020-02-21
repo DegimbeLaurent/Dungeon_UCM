@@ -1,5 +1,6 @@
 package be.dungeon_ucm.demo.BL.Models.Donjons;
 
+import be.dungeon_ucm.demo.BL.Models.Combat.Equipe;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 
 public class Salle {
@@ -10,13 +11,15 @@ public class Salle {
 
     private int coordonneeY;
 
-    private String type;
+    private TypeSalle typeSalle;
 
-    public Salle(Long id, int coordonneeX, int coordonneeY, String type) {
+    private Equipe equipe;
+
+    public Salle(Long id, int coordonneeX, int coordonneeY, TypeSalle typeSalle) {
         this.id = id;
         this.coordonneeX = coordonneeX;
         this.coordonneeY = coordonneeY;
-        this.type = type;
+        this.typeSalle = typeSalle;
     }
 
     public Salle() {
@@ -46,12 +49,19 @@ public class Salle {
         this.coordonneeY = coordonneeY;
     }
 
-    public String getType() {
-        return type;
+    public TypeSalle getType() {
+        return typeSalle;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setType(TypeSalle typeSalle) {
+        this.typeSalle = typeSalle;
     }
 
+    public Equipe getEquipe() {
+        return equipe;
+    }
+
+    public void setEquipe(Equipe equipe) {
+        this.equipe = equipe;
+    }
 }

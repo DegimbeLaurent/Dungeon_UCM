@@ -2,6 +2,7 @@ package be.dungeon_ucm.demo.Outils.Factory.Generateur;
 
 import be.dungeon_ucm.demo.BL.Models.Donjons.Donjon;
 import be.dungeon_ucm.demo.BL.Models.Donjons.Salle;
+import be.dungeon_ucm.demo.BL.Models.Donjons.TypeSalle;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
 import org.springframework.stereotype.Component;
 
@@ -18,7 +19,7 @@ public class DonjonGener {
         sal.setId((long)id);
         sal.setCoordonneeX(poX);
         sal.setCoordonneeY(poY);
-        sal.setType("couloir");
+        sal.setType(TypeSalle.COULOIR);
         return sal;
     }
 
@@ -28,7 +29,7 @@ public class DonjonGener {
         sal.setId((long)id);
         sal.setCoordonneeX(poX);
         sal.setCoordonneeY(poY);
-        sal.setType("relax");
+        sal.setType(TypeSalle.REPOS);
         return sal;
     }
 
@@ -38,7 +39,7 @@ public class DonjonGener {
         sal.setId((long)id);
         sal.setCoordonneeX(poX);
         sal.setCoordonneeY(poY);
-        sal.setType("piege");
+        sal.setType(TypeSalle.PIEGE);
         return sal;
     }
 
@@ -48,12 +49,12 @@ public class DonjonGener {
         sal.setId((long)id);
         sal.setCoordonneeX(poX);
         sal.setCoordonneeY(poY);
-        sal.setType("combat");
+        sal.setType(TypeSalle.COMBAT);
         return sal;
     }
 
     // Appeller lorsqu'on veut recreer un salle diffèrents des autres genre Entrée, .. etc
-    public Salle creationDautreSalle(int id ,int poX, int poY, String type){
+    public Salle creationDautreSalle(int id ,int poX, int poY, TypeSalle type){
         Salle sal = new Salle();
         sal.setCoordonneeX(poX);
         sal.setCoordonneeY(poY);
@@ -68,7 +69,7 @@ public class DonjonGener {
         List<Salle> carte = new ArrayList<>();
         List<Salle> listeSalle = new ArrayList<>();
         int pourcentage = 100 , pourcentageNbSalle, poX = lvlDonjon*5, poY = lvlDonjon*5, probabilite, zoneDeLaSalle, id = 1;
-        listeSalle.add(creationDautreSalle(id,poX,poY,"Entree"));
+        listeSalle.add(creationDautreSalle(id,poX,poY,TypeSalle.ENTREE));
 
         while(pourcentage > 0){
 
