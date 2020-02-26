@@ -2,8 +2,14 @@ package be.dungeon_ucm.demo.API.Controllers.Combat;
 
 import be.dungeon_ucm.demo.API.DTO.Combat.CombatStarDTO;
 import be.dungeon_ucm.demo.API.DTO.Combat.CombatTourDTO;
+import be.dungeon_ucm.demo.API.DTO.Combat.ConsommableInventoryDTO;
+import be.dungeon_ucm.demo.BL.Models.Combat.ConsommableInventory;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.NatureElement;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Boost.ObjectBoost;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Consommable;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjectRecupStat;
+import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjetSoin;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
 import be.dungeon_ucm.demo.BL.Services.Combat.Combat4vs4;
@@ -86,5 +92,32 @@ public class CombatController {
                 break;
         }
         return combatTourDTO;
+    }
+
+    @GetMapping("/inventaireConsommables")
+    public ConsommableInventoryDTO getInventaireConsommables(){
+        //todo : remplacer déclaration par un appel service
+        ConsommableInventory inventory=new ConsommableInventory();
+        List<Consommable> consommables=inventory.getConsommables();
+        Consommable c1=new Consommable("bouteille de vin");
+        c1.setId(1);
+        Consommable c2=new ObjetSoin("potion de vie",15);
+        c2.setId(2);
+        Consommable c3=new ObjectRecupStat("elixir d'endurance","endurance",20);
+        c3.setId(3);
+        Consommable c4=new ObjectBoost("potion de forte endurance","booste votre endurance",4,"endurance");
+        c4.setId(4);
+
+        consommables.add(c1);
+        consommables.add(c2);
+        consommables.add(c3);
+        consommables.add(c4);
+
+        return new ConsommableInventoryDTO(inventory);
+    }
+
+    @PostMapping("/utiliserConsommable")
+    public void utiliserConsommable(int consommableId,int HeroId){
+        //todo : implementer
     }
 }

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Personnage {
+public abstract class Personnage {
 
     private long id;
     private String nomPersonnage;
