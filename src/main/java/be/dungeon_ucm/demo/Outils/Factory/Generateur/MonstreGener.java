@@ -26,7 +26,6 @@ public class MonstreGener{
     }
 
     public Monstre randMonstre(NatureElement type){
-        System.out.println("1");
         SecureRandom random = new SecureRandom();
         int compt = 0;
         for (Race monstre: Race.values()) {
@@ -38,7 +37,6 @@ public class MonstreGener{
             }
         }
         int rest = rand(compt);
-        System.out.println("R4");
         compt=0;
         for (Race monstre: Race.values()) {
             if(monstre.getTypeDeMonstre().equals(type)){
@@ -48,13 +46,10 @@ public class MonstreGener{
                 }
             }
         }
-        System.out.println("");
         return new Monstre(Race.SOEUR);
     }
     public Monstre getMonstre(NatureElement type ,int lvldonjon){
-        System.out.println("2");
         Monstre monstre = randMonstre(type);
-        System.out.println("R1");
 
         monstre.setNiveau(lvldonjon);
         monstre.setPointDeAgilite(monstre.getPointDeAgilite()*lvldonjon);
@@ -81,17 +76,14 @@ public class MonstreGener{
     }
 
     public Monstre[] DesMonstre(NatureElement type , int lvldonjon, int nbr){
-        System.out.println("3");
         Monstre[] monstres = new Monstre[nbr];
         for (int i = 0; i < nbr; i++) {
             monstres[i] = getMonstre(type,lvldonjon);
             monstres[i].setId(generateurIDpersonnageServicelmpl.getIDNEXT());
-            System.out.println("R2");
         }
         return monstres;
     }
     public int rand(int max){
-        System.out.println("4");
         Random r = new Random();
         return r.nextInt(max - 0);
     }

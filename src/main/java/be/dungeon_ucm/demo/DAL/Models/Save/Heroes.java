@@ -18,8 +18,8 @@ public class Heroes {
     @Column(name = "Heroe_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-    @ManyToOne
-    private Save Save;
+
+    //private Save Save;
     @Column(name = "Heroe_nomPersonnage", nullable = false)
     private String nomPersonnage;
     @Column(name = "Heroe_pointDeForce", nullable = false)

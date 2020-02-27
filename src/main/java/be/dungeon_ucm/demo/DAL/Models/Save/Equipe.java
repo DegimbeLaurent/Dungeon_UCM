@@ -22,8 +22,7 @@ public class Equipe {
     private Long ID;
     @Column(name = "Equipe_IDDonjon")
     private Long IDDonjon;
-    @Column(name = "Equip_heroesList")
-    @OneToMany(targetEntity = Heroes.class)
-    private Set<Heroes> heroesList;
+   // @Column(name = "Equip_heroesList")
+    //private Set<Heroes> heroesList;
 
 }

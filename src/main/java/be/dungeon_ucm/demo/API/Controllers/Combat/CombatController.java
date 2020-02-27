@@ -12,6 +12,8 @@ import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjectRecupStat;
 import be.dungeon_ucm.demo.BL.Models.Items.Consommable.Recup.ObjetSoin;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Capacite;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Hero.Hero;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.Monstre;
+import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.BL.Services.Combat.Combat4vs4;
 import be.dungeon_ucm.demo.Outils.Factory.Generateur.MonstreGener;
 import be.dungeon_ucm.demo.Outils.Services.GenerateurIDpersonnageServicelmpl;
@@ -82,14 +84,32 @@ public class CombatController {
 
 
     @PostMapping("/choix")
-    public CombatTourDTO choix(@RequestBody @Valid CombatTourDTO combatTourDTO){
+    public CombatTourDTO choix(@RequestBody CombatTourDTO combatTourDTO){
+        System.out.println(combatTourDTO.getChoix());
         switch (combatTourDTO.getChoix()){
             case 1:
-                combat4vs4.frapper(combatTourDTO.getPersonnages(),combatTourDTO.getCap());
+                if(combatTourDTO.getHeroesattaquant()!=null) {
+                    for (Monstre perso: combatTourDTO.getMonstreSetdefenseur()) {
+                        System.out.println(perso.getPointDeVie());
+                        combat4vs4.frapper(combatTourDTO.getHeroesattaquant(),perso,combatTourDTO.getCap());
+                        System.out.println(perso.getPointDeVie());
+                    }
+                }
+                if(combatTourDTO.getMonstreattaquant()!=null) {
+                    for (Hero perso: combatTourDTO.getHeroesSetdefenseur()) {
+                        System.out.println(perso.getPointDeVie());
+                        combat4vs4.frapper(combatTourDTO.getMonstreattaquant(),perso,combatTourDTO.getCap());
+                        System.out.println(perso.getPointDeVie());
+                    }
+                }
+
                 break;
             case 2:
-                combat4vs4.UseObjet(combatTourDTO.getPersonnages()[1],combatTourDTO.getConsommable());
+
                 break;
+        }
+        for (Hero hero:combatTourDTO.getHeroesSetdefenseur()) {
+            System.out.println(hero.getPointDeVie());
         }
         return combatTourDTO;
     }

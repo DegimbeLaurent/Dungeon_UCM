@@ -20,7 +20,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Component
-public class Combat4vs4 {
+public class Combat4vs4<S> {
     private MonstreGener gener;
 
     private Equipe[] groupe = new Equipe[2];
@@ -64,31 +64,33 @@ public class Combat4vs4 {
         return idperso;
     }
 
-    public Personnage[] frapper(Personnage[] personnagetab, int cap) {
-        if (personnagetab[0].getCapacites().get(cap).isGenreMagic()) {
+    public void frapper(Personnage attaquant,Personnage defenseur, int cap) {
+        if (attaquant.getCapacites().get(cap).isGenreMagic()) {
             personnageService.subirDegatMagic(
-                    personnagetab[1],
-                    (personnagetab[0].getPointDeIntelligence() + personnagetab[0].getCapacites().get(cap).getDegats())
+                    defenseur,
+                    (attaquant.getPointDeIntelligence() + attaquant.getCapacites().get(cap).getDegats())
             );
-            if (gener.rand(100) <= personnagetab[0].getCapacites().get(cap).getCoupCritique()) {
+            if (gener.rand(100) <= attaquant.getCapacites().get(cap).getCoupCritique()) {
                 personnageService.modifierEtat(
-                        personnagetab[1],
-                        personnagetab[0].getCapacites().get(cap).getEffectCritique() // ????????????????????? fk
+                        defenseur,
+                        attaquant.getCapacites().get(cap).getEffectCritique() // ????????????????????? fk
                 );
             }
+            System.out.println(defenseur.getPointDeVie());
         } else {
             personnageService.subirDegatPhys(
-                    personnagetab[1],
-                    (personnagetab[0].getPointDeForce() + personnagetab[0].getCapacites().get(cap).getDegats())
+                    defenseur,
+                    (attaquant.getPointDeForce() + attaquant.getCapacites().get(cap).getDegats())
             );
-            if (gener.rand(100) <= personnagetab[0].getCapacites().get(cap).getCoupCritique()) {
+            if (gener.rand(100) <= attaquant.getCapacites().get(cap).getCoupCritique()) {
                 personnageService.modifierEtat(
-                        personnagetab[1],
-                        personnagetab[0].getCapacites().get(cap).getEffectCritique()
+                        defenseur,
+                        attaquant.getCapacites().get(cap).getEffectCritique()
                 );
             }
+            System.out.println(defenseur.getPointDeVie());
         }
-        return personnagetab;
+
     }
 
 }
