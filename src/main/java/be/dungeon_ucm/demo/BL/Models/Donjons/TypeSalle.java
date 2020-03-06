@@ -7,5 +7,6 @@ public enum TypeSalle {
     BOSS,
     ENTREE,
     REPOS,
-    ;
+    VIDE;
+
 }

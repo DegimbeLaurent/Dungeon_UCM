@@ -100,10 +100,6 @@ public class DonjonGener {
         carte.add(creationDautreSalle(id,0,0,TypeSalle.COULOIR));
         // liste des zones deja prise
         List<Integer> tab = new ArrayList<>(4);
-        tab.add(1);
-        tab.add(2);
-        tab.add(3);
-        tab.add(4);
         ///////// Salle carte //////
         //tant que pourcentage >= 0 il y a des salles autour
         while (pourcentage > 0) {
@@ -164,6 +160,16 @@ public class DonjonGener {
                     }
                 }
             }
+            // pourcentage de salle dans le dj
+            pourcentage -= 20 / lvlDonjon;
+            if (pourcentage <= 0){
+                for (Salle a: carte) {
+                    if(a.getId() == (long)id){
+                        int x = new Random(-1).nextInt(1) , y = new Random(-1).nextInt(1);
+                        carte.add(instancierLeBoss(lvlDonjon,a,id,x,y));
+                    }
+                }
+            }
             // on peut supprimer toute les salles
             listeSalle.clear();
             // On ajoute les nouvelles salles si l'enplacement est pas vide
@@ -176,10 +182,7 @@ public class DonjonGener {
             }
             // vide la liste de salle
             listeTemp.clear();
-            // pourcentage de salle dans le dj
-            pourcentage -= 20 / lvlDonjon;
         }
-
         return carte;
     }
 
@@ -198,10 +201,21 @@ public class DonjonGener {
     // remplir de valeur
     public static Salle instancierLesCoordonnee(int lvlDonjon, Salle a,int id, int posiX, int posiY ){
         Salle o = null;
-        if(posiX != (lvlDonjon*10) && posiY != (lvlDonjon*10)) {
+        if(a.getCoordonneeX() != (lvlDonjon*10) && a.getCoordonneeY() != (lvlDonjon*10)) {
             posiX = a.getCoordonneeX() + posiX;
             posiY = a.getCoordonneeY() + posiY;
             o = ajoutDelaSalle(id++, posiX, posiY);
+        }
+        return o;
+    }
+
+    // Salle du boss
+    public static Salle instancierLeBoss(int lvlDonjon, Salle a,int id, int posiX, int posiY ){
+        Salle o = null;
+        if(posiX != (lvlDonjon*10) && posiY != (lvlDonjon*10)) {
+            posiX = a.getCoordonneeX() + posiX;
+            posiY = a.getCoordonneeY() + posiY;
+            o = creationDautreSalle(id, posiX, posiY, TypeSalle.BOSS);
         }
         return o;
     }
@@ -223,14 +237,13 @@ public class DonjonGener {
         
 
     // Méthode de creation du Donjon
-
     // Zone de creation du donjon ou on le replit grace a la  creationDeLaMap
-    public Donjon creationDeDonjon ( int lvlDonjon, NatureElement natureElement){
+    public Donjon creationDeDonjon (Long id, int lvlDonjon, NatureElement natureElement){
         Donjon dj = new Donjon();
         dj.setNiveau(lvlDonjon);
         dj.setNom("Donjon" + natureElement.name());
         dj.setType(natureElement);
-        dj.setId(1L); // A mettre dans la DB
+        dj.setId(id); // A mettre dans la DB
         dj.setSalles(creationDeLaMap(lvlDonjon));
         return dj;
     }
