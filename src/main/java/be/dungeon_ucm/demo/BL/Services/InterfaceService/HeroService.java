@@ -14,4 +14,7 @@ public interface HeroService extends PersonnageService {
     // Recuperation de PE
     void RecupEndurance(Hero h, int pe);
 
+    // gain xp
+    void GainXp(Hero h, int xp,LancerDeDes de);
+
 }

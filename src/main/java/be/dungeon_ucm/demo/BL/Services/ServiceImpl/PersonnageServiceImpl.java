@@ -9,11 +9,14 @@ import be.dungeon_ucm.demo.BL.Services.InterfaceService.PersonnageService;
 import be.dungeon_ucm.demo.Outils.Model.LancerDeDes;
 import be.dungeon_ucm.demo.Outils.Services.LancerServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
+import static io.cucumber.spring.CucumberTestContext.SCOPE_CUCUMBER_GLUE;
 
 import java.util.List;
 
 @Service
+@Scope()
 public class PersonnageServiceImpl implements PersonnageService {
 
     private LancerServiceImpl lancerServiceImpl;

@@ -3,11 +3,13 @@ package be.dungeon_ucm.demo.BL.Models.Personnage;
 import be.dungeon_ucm.demo.BL.Models.EtatNature.Etat;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Arme;
 import be.dungeon_ucm.demo.BL.Models.Items.Equipement.Armure;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
+@ToString
 public abstract class Personnage {
 
     private long id;

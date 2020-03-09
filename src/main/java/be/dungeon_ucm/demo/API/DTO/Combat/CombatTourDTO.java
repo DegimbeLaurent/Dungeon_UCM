@@ -15,6 +15,7 @@ import java.util.Set;
 @Getter
 @Setter
 @ToString
+//!!!!!!!!!!!!!!!!!!!!!n'est plus utilisé!!!!!!!!!!!!!!!!!!!!!!!!!!
 public class CombatTourDTO {
 
     private Monstre monstreattaquant;

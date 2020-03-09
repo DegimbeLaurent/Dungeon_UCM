@@ -46,7 +46,7 @@ public class CombatController {
         Hero jou2 = new Hero("PersoTest2",20,10,3,3,3,5,5,8);
         Hero jou3 = new Hero("PersoTest3",20,10,3,5,3,5,5,8);
         Hero jou4 = new Hero("PersoTest4",20,10,3,2,3,5,5,8);
-        Capacite capacite1 = new Capacite("boule de feu",6,10,1,false,1,true,Etat.BRULEE, NatureElement.FEU);
+        Capacite capacite1 = new Capacite("boule de feu",6,10,1,false,3,true,Etat.BRULEE, NatureElement.FEU);
         Capacite capacite2 = new Capacite("boule de glace",6,10,1,false,1,true,Etat.GELE, NatureElement.GLACE);
         Capacite capacite3 = new Capacite("coup de pied",6,10,1,false,1,false,Etat.NORMAL, NatureElement.NEUTRE);
         Capacite capacite4 = new Capacite("coup de tête",6,10,1,false,1,false,Etat.NORMAL, NatureElement.NEUTRE);
@@ -84,22 +84,22 @@ public class CombatController {
 
 
     @PostMapping("/choix")
-    public CombatTourDTO choix(@RequestBody CombatTourDTO combatTourDTO){
-        System.out.println(combatTourDTO.getChoix());
-        switch (combatTourDTO.getChoix()){
+    public CombatStarDTO choix(@RequestBody CombatStarDTO combatStarDTO){
+        System.out.println(combatStarDTO.getMonstreattaquant());
+        switch (combatStarDTO.getChoix()){
             case 1:
-                if(combatTourDTO.getHeroesattaquant()!=null) {
-                    for (Monstre perso: combatTourDTO.getMonstreSetdefenseur()) {
-                        System.out.println(perso.getPointDeVie());
-                        combat4vs4.frapper(combatTourDTO.getHeroesattaquant(),perso,combatTourDTO.getCap());
-                        System.out.println(perso.getPointDeVie());
+                if(combatStarDTO.getHeroesattaquant()!=null) {
+                    if (combatStarDTO.getHeroesattaquant().getNomPersonnage() != null) {
+                        for (int cible: combatStarDTO.getCible()) {
+                            combat4vs4.frapper(combatStarDTO.getHeroesattaquant(),combatStarDTO.getMonstre()[cible],combatStarDTO.getCap());
+                        }
                     }
                 }
-                if(combatTourDTO.getMonstreattaquant()!=null) {
-                    for (Hero perso: combatTourDTO.getHeroesSetdefenseur()) {
-                        System.out.println(perso.getPointDeVie());
-                        combat4vs4.frapper(combatTourDTO.getMonstreattaquant(),perso,combatTourDTO.getCap());
-                        System.out.println(perso.getPointDeVie());
+                if(combatStarDTO.getMonstreattaquant()!=null) {
+                    if (combatStarDTO.getMonstreattaquant().getNomPersonnage() != null) {
+                        for (int cible: combatStarDTO.getCible()) {
+                            combat4vs4.frapper(combatStarDTO.getMonstreattaquant(),combatStarDTO.getJoueurs()[cible],combatStarDTO.getCap());
+                        }
                     }
                 }
 
@@ -108,10 +108,10 @@ public class CombatController {
 
                 break;
         }
-        for (Hero hero:combatTourDTO.getHeroesSetdefenseur()) {
+        for (Hero hero:combatStarDTO.getJoueurs()) {
             System.out.println(hero.getPointDeVie());
         }
-        return combatTourDTO;
+        return combatStarDTO;
     }
 
     @GetMapping("/inventaireConsommables")

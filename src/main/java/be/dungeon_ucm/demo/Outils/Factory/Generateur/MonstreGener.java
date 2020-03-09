@@ -8,14 +8,18 @@ import be.dungeon_ucm.demo.BL.Models.Personnage.Monstre.RaceMonstre.Race;
 import be.dungeon_ucm.demo.BL.Models.Personnage.Personnage;
 import be.dungeon_ucm.demo.Outils.Services.GenerateurIDpersonnageServicelmpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import static io.cucumber.spring.CucumberTestContext.SCOPE_CUCUMBER_GLUE;
 
-@Component
+@Service
+@Scope()
 public class MonstreGener{
 
     private GenerateurIDpersonnageServicelmpl generateurIDpersonnageServicelmpl;

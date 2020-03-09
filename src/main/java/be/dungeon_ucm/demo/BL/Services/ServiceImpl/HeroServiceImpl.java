@@ -34,6 +34,16 @@ public class HeroServiceImpl implements HeroService {
             h.setPointDExperienceMax(h.getNiveau() * 100);
         }
     }
+
+    @Override
+    public void GainXp(Hero h, int xp, LancerDeDes de) {
+        h.setPointDExperience(xp);
+        if(h.getPointDExperience() >= h.getPointDExperienceMax()){
+            h.setPointDExperience(h.getPointDExperience()-h.getPointDExperienceMax());
+            monteeNiveau(h,de);
+        }
+    }
+
     @Override
     public void RecupEndurance(Hero h, int pe) {
         if(h.getVie()){
