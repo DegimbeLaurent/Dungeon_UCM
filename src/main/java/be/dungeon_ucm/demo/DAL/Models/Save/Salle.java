@@ -15,7 +15,6 @@ public class Salle {
     @Column(name = "Salle_ID")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ID;
-
     @Column(name = "Salle_IDDonjon")
     private Long IDDonjon;
     @Column(name = "Salle_posy")
