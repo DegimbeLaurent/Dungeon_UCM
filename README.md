@@ -4,7 +4,7 @@ Project with my friend, who aims to train on java and the design pattern
 
 ## Who did the project 
 
-* [Thomas](https://github.com/fredgaloppin)
+* [Thomas](https://github.com/WattecampsProg)
 * [Laurent Degimbe](https://github.com/DegimbeLaurent)
 
 ## What is that ?
